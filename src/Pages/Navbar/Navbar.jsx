@@ -30,10 +30,19 @@ const Navbar = () => {
           >
             <span className="hover:text-gray-300 cursor-pointer py-5 ">College</span>
             {showCollegeDropdown && (
-              <ul className="absolute bg-white text-black mt-5 rounded shadow-lg w-48 list-none">
-                <li className="px-4 py-2 hover:bg-gray-200">College 1</li>
-                <li className="px-4 py-2 hover:bg-gray-200">College 2</li>
-                <li className="px-4 py-2 hover:bg-gray-200">College 3</li>
+              <ul className="absolute bg-white text-black mt-4 rounded shadow-lg w-48 list-none z-40">
+                <li className="px-4 py-2 hover:bg-gray-200">B.Tech Colleges</li>
+                <li className="px-4 py-2 hover:bg-gray-200">MBA Colleges</li>
+                <li className="px-4 py-2 hover:bg-gray-200">MBBS Colleges</li>
+                <li className="px-4 py-2 hover:bg-gray-200">MCA Colleges</li>
+                <li className="px-4 py-2 hover:bg-gray-200">BBA Colleges</li>
+                <li className="px-4 py-2 hover:bg-gray-200">BCA Colleges</li>
+                <li className="px-4 py-2 hover:bg-gray-200">BE Colleges</li>
+                <li className="px-4 py-2 hover:bg-gray-200">BDS Colleges</li>
+                <li className="px-4 py-2 hover:bg-gray-200">LAW Collage</li>
+                <li className="px-4 py-2 hover:bg-gray-200"> College</li>
+                <li className="px-4 py-2 hover:bg-gray-200">MBA Colleges</li>
+                <li className="px-4 py-2 hover:bg-gray-200">MBBS Collage</li>
               </ul>
             )}
           </li>
@@ -44,7 +53,7 @@ const Navbar = () => {
           >
             <span className="hover:text-gray-300 cursor-pointer py-5">Course</span>
             {showCourseDropdown && (
-              <ul className="absolute bg-white text-black mt-5 rounded shadow-lg w-48 list-none">
+              <ul className="absolute bg-white text-black mt-4 rounded shadow-lg w-48 list-none z-40">
                 <li className="px-4 py-2 hover:bg-gray-200">Course 1</li>
                 <li className="px-4 py-2 hover:bg-gray-200">Course 2</li>
                 <li className="px-4 py-2 hover:bg-gray-200">Course 3</li>

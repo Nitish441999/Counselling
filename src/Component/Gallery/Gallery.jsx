@@ -65,11 +65,13 @@ const Gallery = () => {
               className="relative group overflow-hidden rounded-xl"
               onMouseEnter={() => setHoveredImage(image.id)}
               onMouseLeave={() => setHoveredImage(null)}
+
             >
               {/* Image */}
               <img
                 src={image.src}
                 alt={image.name}
+                loading='lazy'
                 className="w-full h-full object-cover transition-transform duration-300 ease-in-out transform group-hover:scale-110"
               />
 

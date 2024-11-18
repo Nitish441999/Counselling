@@ -22,6 +22,7 @@ function Btech() {
               <img
                 src={product.image}
                 alt={product.name}
+                loading="lazy"
                 className="w-full h-48 object-cover"
               />
               {/* Product Details */}

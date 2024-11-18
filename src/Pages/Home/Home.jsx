@@ -5,6 +5,7 @@ import Btech from '../../Component/Btech/Btech'
 import Mbbs from '../../Component/MBBS/Mbbs'
 import Law from '../../Component/Law/Law'
 import Gallery from '../../Component/Gallery/Gallery'
+import CounsellingForm from '../../Component/CounsellingForm/CounsellingForm'
 
 function Home() {
   return (
@@ -15,6 +16,7 @@ function Home() {
     <Mbbs/>
     <Law/>
     <Gallery/>
+    <CounsellingForm/>
     </div>
   )
 }
