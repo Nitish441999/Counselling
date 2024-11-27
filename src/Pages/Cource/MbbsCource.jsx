@@ -1,6 +1,6 @@
 import React from "react";
 
-function Mbbs() {
+function MbbsCource() {
   const products = [
     {
       id: 1,
@@ -26,11 +26,41 @@ function Mbbs() {
       image:
         "https://careercounsellingcentre.com/wp-content/uploads/2024/04/Ramaiah-Institute-Of-Technology.png",
     },
+    {
+      id: 4,
+      name: "Ramaiah Institute Of Technology",
+      image:
+        "https://careercounsellingcentre.com/wp-content/uploads/2024/04/Ramaiah-Institute-Of-Technology.png",
+    },
+    {
+      id: 4,
+      name: "Ramaiah Institute Of Technology",
+      image:
+        "https://careercounsellingcentre.com/wp-content/uploads/2024/04/Ramaiah-Institute-Of-Technology.png",
+    },
+    {
+      id: 4,
+      name: "Ramaiah Institute Of Technology",
+      image:
+        "https://careercounsellingcentre.com/wp-content/uploads/2024/04/Ramaiah-Institute-Of-Technology.png",
+    },
+    {
+      id: 4,
+      name: "Ramaiah Institute Of Technology",
+      image:
+        "https://careercounsellingcentre.com/wp-content/uploads/2024/04/Ramaiah-Institute-Of-Technology.png",
+    },
+    {
+      id: 4,
+      name: "Ramaiah Institute Of Technology",
+      image:
+        "https://careercounsellingcentre.com/wp-content/uploads/2024/04/Ramaiah-Institute-Of-Technology.png",
+    },
   ];
 
   return (
-    <div className="p-6 flex justify-center">
-      <div className="max-w-[90.33%] w-full">
+    <div className="min-lg:p-6 flex justify-center">
+      <div className="max-w-[90.33%] w-full mt-5">
         <h2 className="text-2xl font-bold mb-6 text-center">
           Top MBBS Colleges
         </h2>
@@ -68,4 +98,4 @@ function Mbbs() {
   );
 }
 
-export default Mbbs;
+export default MbbsCource;

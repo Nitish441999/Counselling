@@ -7,11 +7,17 @@ const CounsellingForm = () => {
     phone: "",
     course: "",
     message: "",
+    tenthMarksheet: null,
+    twelfthMarksheet: null,
   });
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+    const { name, value, files } = e.target;
+    if (files) {
+      setFormData({ ...formData, [name]: files[0] }); // Handling file input
+    } else {
+      setFormData({ ...formData, [name]: value }); // Handling text input
+    }
   };
 
   const handleSubmit = (e) => {
@@ -25,18 +31,24 @@ const CounsellingForm = () => {
       phone: "",
       course: "",
       message: "",
+      tenthMarksheet: null,
+      twelfthMarksheet: null,
     });
   };
 
   return (
     <div className="flex justify-center py-6 px-4">
       <div className="max-w-[90.33%] w-full bg-gray-100 rounded-lg shadow-md p-6">
-        <h2 className="text-2xl font-bold mb-6 text-center">Need Counselling.
-        Fill the form</h2>
+        <h2 className="text-2xl font-bold mb-6 text-center">
+          Need Counselling. Fill the form
+        </h2>
         <form onSubmit={handleSubmit} className="space-y-4">
           {/* Name Field */}
           <div>
-            <label htmlFor="name" className="block text-sm font-medium text-gray-700">
+            <label
+              htmlFor="name"
+              className="block text-sm font-medium text-gray-700"
+            >
               Full Name
             </label>
             <input
@@ -46,14 +58,17 @@ const CounsellingForm = () => {
               value={formData.name}
               onChange={handleChange}
               placeholder="Enter your full name"
-              className="mt-1 h-10 block w-full rounded-md border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
+              className="mt-1 p-2 h-10 block w-full rounded-md border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
               required
             />
           </div>
 
           {/* Email Field */}
           <div>
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+            <label
+              htmlFor="email"
+              className="block text-sm font-medium text-gray-700"
+            >
               Email Address
             </label>
             <input
@@ -70,7 +85,10 @@ const CounsellingForm = () => {
 
           {/* Phone Number Field */}
           <div>
-            <label htmlFor="phone" className="block text-sm font-medium text-gray-700">
+            <label
+              htmlFor="phone"
+              className="block text-sm font-medium text-gray-700"
+            >
               Phone Number
             </label>
             <input
@@ -87,7 +105,10 @@ const CounsellingForm = () => {
 
           {/* Course Selection */}
           <div>
-            <label htmlFor="course" className="block text-sm font-medium text-gray-700">
+            <label
+              htmlFor="course"
+              className="block text-sm font-medium text-gray-700"
+            >
               Select Course
             </label>
             <select
@@ -110,7 +131,10 @@ const CounsellingForm = () => {
 
           {/* Message Field */}
           <div>
-            <label htmlFor="message" className="block text-sm font-medium text-gray-700">
+            <label
+              htmlFor="message"
+              className="block text-sm font-medium text-gray-700"
+            >
               Message (Optional)
             </label>
             <textarea
@@ -123,6 +147,45 @@ const CounsellingForm = () => {
             ></textarea>
           </div>
 
+          <div className=" flex">
+            <div>
+              {/* 10th Marksheet Upload */}
+              <label
+                htmlFor="tenthMarksheet"
+                className="block text-sm font-medium text-gray-700"
+              >
+                Upload 10th Marksheet
+              </label>
+              <input
+                type="file"
+                id="tenthMarksheet"
+                name="tenthMarksheet"
+                onChange={handleChange}
+                className="mt-1 block w-full text-sm text-gray-700 border-gray-300 focus:ring-indigo-500 focus:border-indigo-500"
+                accept="image/*,application/pdf"
+                required
+              />
+            </div>
+
+            {/* 12th Marksheet Upload */}
+            <div>
+              <label
+                htmlFor="twelfthMarksheet"
+                className="block text-sm font-medium text-gray-700"
+              >
+                Upload 12th Marksheet
+              </label>
+              <input
+                type="file"
+                id="twelfthMarksheet"
+                name="twelfthMarksheet"
+                onChange={handleChange}
+                className="mt-1 block w-full text-sm text-gray-700 border-gray-300 focus:ring-indigo-500 focus:border-indigo-500"
+                accept="image/*,application/pdf"
+                required
+              />
+            </div>
+          </div>
           {/* Submit Button */}
           <div className="text-center">
             <button

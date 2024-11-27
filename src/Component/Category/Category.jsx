@@ -55,7 +55,7 @@ function Category() {
       <Slider {...settings} className=" overflow-hidden">
         {categories.map((category) => (
           <div key={category.id} className="p-4">
-            <div className="relative bg-white shadow-lg rounded-lg overflow-hidden cursor-pointer">
+            <div className="relative bg-white shadow-md rounded-lg overflow-hidden cursor-pointer">
               {/* Image Section */}
               <img
                 src={category.image}
