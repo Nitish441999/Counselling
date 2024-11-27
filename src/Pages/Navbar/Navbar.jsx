@@ -52,18 +52,24 @@ const Navbar = () => {
             onMouseLeave={() => setShowCollegeDropdown(false)}
           >
             <span className="hover:text-gray-300 cursor-pointer py-5">
-              <Link to="/colleges">College</Link>
+              College
             </span>
             {showCollegeDropdown && (
               <ul className="absolute bg-white text-black mt-4 rounded shadow-lg w-48 list-none z-40">
-                <li className="px-4 py-2 hover:bg-gray-200">
-                  <Link to="/btechCollage">B.Tech Colleges</Link>
+                <li className="px-4 py-3 hover:bg-gray-200">
+                  <Link className="px-4 py-2" to="/btechCollage">
+                    B.Tech Colleges
+                  </Link>
                 </li>
                 <li className="px-4 py-2 hover:bg-gray-200">
-                  <Link to="/mbaCollage">MBA Colleges</Link>
+                  <Link className="px-4 py-2" to="/mbaCollage">
+                    MBA Colleges
+                  </Link>
                 </li>
                 <li className="px-4 py-2 hover:bg-gray-200">
-                  <Link to="/mbbsCollage">MBBS Colleges</Link>
+                  <Link className="px-4 py-2" to="/mbbsCollage">
+                    MBBS Colleges
+                  </Link>
                 </li>
               </ul>
             )}
@@ -74,18 +80,24 @@ const Navbar = () => {
             onMouseLeave={() => setShowCourseDropdown(false)}
           >
             <span className="hover:text-gray-300 cursor-pointer py-5">
-              <Link to="/courses">Course</Link>
+              Course
             </span>
             {showCourseDropdown && (
               <ul className="absolute bg-white text-black mt-4 rounded shadow-lg w-48 list-none z-40">
                 <li className="px-4 py-2 hover:bg-gray-200">
-                  <Link to="/mbbsCourses">MBBS</Link>
+                  <Link className="px-4 py-2" to="/mbbsCourses">
+                    MBBS
+                  </Link>
                 </li>
                 <li className="px-4 py-2 hover:bg-gray-200">
-                  <Link to="/betchCourses">B.Tech</Link>
+                  <Link className="px-4 py-2" to="/betchCourses">
+                    B.Tech
+                  </Link>
                 </li>
                 <li className="px-4 py-2 hover:bg-gray-200">
-                  <Link to="/lawCourses">Law</Link>
+                  <Link className="px-4 py-2" to="/lawCourses">
+                    Law
+                  </Link>
                 </li>
               </ul>
             )}
