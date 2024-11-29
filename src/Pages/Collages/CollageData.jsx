@@ -1,49 +1,81 @@
 const data = [
   {
-    image: "https://via.placeholder.com/1200x400", // Replace with your image URL
-    name: "Example College",
-    location: "121 College Avenue, City, State",
-    description:
-      "This is a prestigious institution offering a variety of courses across multiple disciplines. Known for its excellent faculty and state-of-the-art facilities.",
-    website: "https://example-college.com",
-    category: "btechCollage",
+    category: "btech",
+    btechCollages: [
+      {
+        id: 1,
+        name: "Alliance University",
+        image: "https://careercounsellingcentre.com/wp-content/uploads/2024/04/Alliance-University.png",
+      },
+      {
+        id: 2,
+        name: "ITM Business School",
+        image: "https://careercounsellingcentre.com/wp-content/uploads/2024/04/ITM-Business-School.png",
+      },
+      {
+        id: 3,
+        name: "S. P. Jain Institute of Management",
+        image: "https://careercounsellingcentre.com/wp-content/uploads/2024/04/S.-P.-Jain-Institute-of-Management-.png",
+      },
+      {
+        id: 4,
+        name: "Ramaiah Institute Of Technology",
+        image: "https://careercounsellingcentre.com/wp-content/uploads/2024/04/Ramaiah-Institute-Of-Technology.png",
+      },
+    ],
   },
   {
-    image: "https://via.placeholder.com/1200x400", // Replace with your image URL
-    name: "Example College",
-    location: "122 College Avenue, City, State",
-    description:
-      "This is a prestigious institution offering a variety of courses across multiple disciplines. Known for its excellent faculty and state-of-the-art facilities.",
+    category: "mbbs",
+    mbbsCollages: [
+      {
+        id: 1,
+        name: "Alliance University",
+        image: "https://careercounsellingcentre.com/wp-content/uploads/2024/04/Alliance-University.png",
+      },
+      {
+        id: 2,
+        name: "ITM Business School",
+        image: "https://careercounsellingcentre.com/wp-content/uploads/2024/04/ITM-Business-School.png",
+      },
+      {
+        id: 3,
+        name: "S. P. Jain Institute of Management",
+        image: "https://careercounsellingcentre.com/wp-content/uploads/2024/04/S.-P.-Jain-Institute-of-Management-.png",
+      },
+      {
+        id: 4,
+        name: "Ramaiah Institute Of Technology",
+        image: "https://careercounsellingcentre.com/wp-content/uploads/2024/04/Ramaiah-Institute-Of-Technology.png",
+      },
+    ],
     website: "https://example-college.com",
-    category: "mbbsCollage",
   },
   {
-    image: "https://via.placeholder.com/1200x400", // Replace with your image URL
-    name: "Example College",
-    location: "123 College Avenue, City, State",
-    description:
-      "This is a prestigious institution offering a variety of courses across multiple disciplines. Known for its excellent faculty and state-of-the-art facilities.",
-    website: "https://example-college.com",
-    category: "lawCollage",
+    category: "law",
+    lawCollages: [
+      {
+        id: 1,
+        name: "Alliance University",
+        image: "https://careercounsellingcentre.com/wp-content/uploads/2024/04/Alliance-University.png",
+      },
+      {
+        id: 2,
+        name: "ITM Business School",
+        image: "https://careercounsellingcentre.com/wp-content/uploads/2024/04/ITM-Business-School.png",
+      },
+      {
+        id: 3,
+        name: "S. P. Jain Institute of Management",
+        image: "https://careercounsellingcentre.com/wp-content/uploads/2024/04/S.-P.-Jain-Institute-of-Management-.png",
+      },
+      {
+        id: 4,
+        name: "Ramaiah Institute Of Technology",
+        image: "https://careercounsellingcentre.com/wp-content/uploads/2024/04/Ramaiah-Institute-Of-Technology.png",
+      },
+    ],
   },
-  {
-    image: "https://via.placeholder.com/1200x400", // Replace with your image URL
-    name: "Example College",
-    location: "124 College Avenue, City, State",
-    description:
-      "This is a prestigious institution offering a variety of courses across multiple disciplines. Known for its excellent faculty and state-of-the-art facilities.",
-    website: "https://example-college.com",
-    category: "BeCollage",
-  },
-  {
-    image: "https://via.placeholder.com/1200x400", // Replace with your image URL
-    name: "Example College",
-    location: "125 College Avenue, City, State",
-    description:
-      "This is a prestigious institution offering a variety of courses across multiple disciplines. Known for its excellent faculty and state-of-the-art facilities.",
-    website: "https://example-college.com",
-    category: "mbaCollage",
-  },
+  // Similar structure for other categories...
 ];
 
 export default data;

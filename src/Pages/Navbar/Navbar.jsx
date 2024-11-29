@@ -57,18 +57,23 @@ const Navbar = () => {
             {showCollegeDropdown && (
               <ul className="absolute bg-white text-black mt-4 rounded shadow-lg w-48 list-none z-40">
                 <li className="px-4 py-3 hover:bg-gray-200">
-                  <Link className="px-4 py-2" to="/btechCollage">
+                  <Link className="px-4 py-2" to="/btech">
                     B.Tech Colleges
                   </Link>
                 </li>
                 <li className="px-4 py-2 hover:bg-gray-200">
-                  <Link className="px-4 py-2" to="/mbaCollage">
+                  <Link className="px-4 py-2" to="/mba">
                     MBA Colleges
                   </Link>
                 </li>
                 <li className="px-4 py-2 hover:bg-gray-200">
-                  <Link className="px-4 py-2" to="/mbbsCollage">
+                  <Link className="px-4 py-2" to="/mbbs">
                     MBBS Colleges
+                  </Link>
+                </li>
+                <li className="px-4 py-2 hover:bg-gray-200">
+                  <Link className="px-4 py-2" to="/law">
+                    Law Colleges
                   </Link>
                 </li>
               </ul>
