@@ -1,6 +1,8 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 function MbbsCource() {
+  const navigate = useNavigate();
   const products = [
     {
       id: 1,
@@ -57,6 +59,9 @@ function MbbsCource() {
         "https://careercounsellingcentre.com/wp-content/uploads/2024/04/Ramaiah-Institute-Of-Technology.png",
     },
   ];
+  const handleNavigateToCounselling = () => {
+    navigate("/CounsellingForm");
+  };
 
   return (
     <div className="min-lg:p-6 flex justify-center">
@@ -82,7 +87,10 @@ function MbbsCource() {
                 <h3 className="text-lg font-semibold mb-2">{product.name}</h3>
                 {/* Action Buttons */}
                 <div className="flex justify-center space-x-4">
-                  <button className="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600">
+                  <button
+                    className="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600"
+                    onClick={handleNavigateToCounselling}
+                  >
                     Need Counselling
                   </button>
                   <button className="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600">

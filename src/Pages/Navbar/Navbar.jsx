@@ -26,12 +26,19 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="flex items-center bg-blue-500 text-white sticky top-0 p-4 z-50 shadow-lg h-20">
-      <div className="container mx-auto flex justify-between items-center max-w-7xl">
+    <nav className="flex items-center bg-blue-500 text-white sticky top-0 p-4 z-50 shadow-lg h-24">
+      <div className="container mx-auto flex justify-between items-center max-w-full mx-5">
         {/* Website Name */}
-        <h1 className="text-xl font-bold">
-          <Link to="/">Website Name</Link>
-        </h1>
+        <div className=" flex justify-center items-center gap-3">
+          <img
+            src="https://i.imgur.com/iUigS5P.jpeg"
+            alt="logo"
+            className=" w-20 h-20 rounded-full "
+          />
+          <h1 className="text-xl font-bold uppercase max-md:text-sm">
+            <Link to="/">Student Counselling Corner</Link>
+          </h1>
+        </div>
 
         {/* Mobile Toggle Button */}
         <button
@@ -90,17 +97,17 @@ const Navbar = () => {
             {showCourseDropdown && (
               <ul className="absolute bg-white text-black mt-4 rounded shadow-lg w-48 list-none z-40">
                 <li className="px-4 py-2 hover:bg-gray-200">
-                  <Link className="px-4 py-2" to="/mbbsCourses">
+                  <Link className="px-4 py-2" to="/mbbs">
                     MBBS
                   </Link>
                 </li>
                 <li className="px-4 py-2 hover:bg-gray-200">
-                  <Link className="px-4 py-2" to="/betchCourses">
+                  <Link className="px-4 py-2" to="/btech">
                     B.Tech
                   </Link>
                 </li>
                 <li className="px-4 py-2 hover:bg-gray-200">
-                  <Link className="px-4 py-2" to="/lawCourses">
+                  <Link className="px-4 py-2" to="/law">
                     Law
                   </Link>
                 </li>

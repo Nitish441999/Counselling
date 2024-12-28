@@ -9,6 +9,7 @@ import MbbsCource from "./Pages/Cource/MbbsCource";
 import BtechCource from "./Pages/Cource/BtechCource";
 import LawCource from "./Pages/Cource/LawCource";
 import AllCollage from "./Pages/Collages/AllCollage";
+import CounsellingForm from "./Pages/CounsellingForm/CounsellingForm";
 
 function App() {
   const location = useLocation();
@@ -24,6 +25,7 @@ function App() {
         <Route path="/mbbsCourses" element={<MbbsCource />} />
         <Route path="/betchCourses" element={<BtechCource />} />
         <Route path="/lawCourses" element={<LawCource />} />
+        <Route path="/CounsellingForm" element={<CounsellingForm />} />
         <Route path={location.pathname} element={<AllCollage />} />
       </Routes>
       <Footer />
