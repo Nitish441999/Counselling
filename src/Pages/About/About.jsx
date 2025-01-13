@@ -1,11 +1,10 @@
 import React from "react";
 
-
-function About( ) {
+function About() {
   return (
     <div className=" p-5">
       <h1 className="text-center text-[#214fc6] text-5xl font-bold max-sm:text-3xl tracking-widest">
-      ABOUT US
+        ABOUT US
       </h1>
       <div className="w-full min-h-[60vh] flex justify-center items-center max-md:flex-wrap gap-12 mt-10 overflow-hidden">
         <div className="w-[600px] min-h-[20vh]">
@@ -17,27 +16,25 @@ function About( ) {
           />
         </div>
         <div className="w-[550px] min-h-[60vh]">
-        
           <p className=" text-justify  leading-7 custom-paragraph mx-4">
-            We are manufacturing company engaged in field of manufacturing parts
-            for engineering companies like intra logistics, packaging,
-            automotive, conveyors, ropeways, by machining and fabrication We
-            have machining facilities like CNC and VMC can work even in seventh
-            axis in 7th axis. We have reverse engineering facilities along with
-            design and development for ropeways and engineering companies. Our
-            hardworking and knowledge staff of sales, application, and
-            production engineers collaborate with our customers to guarantee
-            that the goods are appropriate for the application and assist users
-            in increasing productivity and lowering costs Our customers have
-            consistently trusted us. From introducing comprehensive conveyor
-            systems in accordance with the needs of our esteemed business
-            partners. JPS ENGINEERS will continue to grow and pursue a larger
-            market share. We are approaching our market from afresh angle and
-            are happy to share our ideals of quality and innovation with every
-            client.
+            Student Counseling Corner is a trusted and experienced admission
+            consultancy with over 15 years of expertise in guiding students
+            through the complex admission process. We specialize in providing
+            admission assistance for a wide range of courses across India and
+            abroad. Our services cater to various academic fields, including
+            Management, Engineering, Medical, Nursing, Hotel Management, and
+            Paramedical disciplines. We are committed to helping students secure
+            placements in top colleges and universities, offering expert
+            counseling and support for programs such as B.Tech, M.Tech, MBBS,
+            BHMS, BAMS, MD, GNM, B.Sc Nursing, M.Sc Nursing, BBA, MBA, BCA, and
+            Diploma courses. With a deep understanding of the education
+            landscape and a network of prestigious institutions, we aim to make
+            the admission process seamless and stress-free for students. Whether
+            you're looking to pursue undergraduate or postgraduate studies,
+            Student Counseling Corner is dedicated to guiding you every step of
+            the way toward achieving your academic and career goals.
           </p>
         </div>
-        
       </div>
     </div>
   );
