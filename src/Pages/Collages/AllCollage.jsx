@@ -1,6 +1,6 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
-import data from "./CollageData"; // Assuming the data file is correctly imported
+import data from "./CollageData"; // Import the data file
 
 function AllCollage() {
   const location = useLocation();
@@ -9,13 +9,8 @@ function AllCollage() {
   // Filter the data based on the category in the path
   const filteredData = data.find((item) => item.category === path);
 
-  console.log("Path:", path);
-  console.log("Filtered Data:", filteredData);
-  console.log("Colleges Key:", `${path}collages`);
-
   // Get the specific list of colleges from the filtered data
   const colleges = filteredData?.[`${path}Collages`] || [];
-  console.log("Colleges Array:", colleges);
 
   return (
     <div className="min-lg:p-6 flex justify-center">

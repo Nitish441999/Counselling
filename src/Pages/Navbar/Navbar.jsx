@@ -8,6 +8,7 @@ import { IoMdArrowDropright } from "react-icons/io";
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isCollageDropdownOpen, setIsCollageDropdownOpen] = useState(false);
+  const [isservicveDropdownOpen, setIsserviceDropdownOpen] = useState(false);
   const [isDivisionsDropdownOpen, setIsDivisionsDropdownOpen] = useState(false);
   const [isIndinanCollageSubDropdownOpen, setIsIndinanCollageSubDropdownOpen] =
     useState(false);
@@ -41,25 +42,26 @@ const Navbar = () => {
     setIsAbrodCollagesSubDropdownOpen(false);
     setIsIndianCollagesSubDropdownOpen(false);
     setIsEngineeringSubDropdownOpen(false);
+    setIsserviceDropdownOpen(false);
   };
 
   return (
-    <nav className="navbar sticky top-0 z-20 bg-white shadow-xl">
+    <nav className="navbar sticky top-0 z-20 bg-blue-700 shadow-xl">
       <div className="w-full px-16 max-md:px-1 ">
         <div className="flex justify-between items-center flex-w">
           {/* Logo Section */}
           <div className="flex items-center space-x-2">
             <img
-              className="w-20 h-20 max-md:w-20"
+              className="w-20 h-20 max-md:w-20 rounded-full"
               src="https://i.imgur.com/iUigS5P.jpeg"
               alt="Logo"
             />
             <Link
               to="/"
-              className="flex items-center py-5 text-[#214fc6]"
+              className="flex items-center py-5 text-white"
               onClick={handleLinkClick}
             >
-              <span className="font-bold uppercase text-[20px]">
+              <span className="font-bold uppercase text-[20px] max-md:text-[15px]">
                 Student Counselling Corner
               </span>
             </Link>
@@ -69,53 +71,51 @@ const Navbar = () => {
           <div className="hidden lg:flex items-center space-x-4">
             <Link
               to="/"
-              className="py-5 px-3 text-[#214fc6] uppercase font-semibold hover:text-blue-300"
+              className="py-5 px-3 text-white uppercase font-semibold hover:text-blue-300"
               onClick={handleLinkClick}
             >
               Home
             </Link>
-            {/* <Link
+            <Link
               to="/about"
-              className="py-5 px-3 text-[#214fc6] uppercase font-semibold hover:text-blue-300"
+              className="py-5 px-3 text-white uppercase font-semibold hover:text-blue-300"
               onClick={handleLinkClick}
             >
               About
-            </Link> */}
-            {/* <Link
-              to="/service"
-              className="py-5 px-3 text-[#214fc6] uppercase font-semibold hover:text-blue-300"
-              onClick={handleLinkClick}
-            >
-              Service
-            </Link> */}
+            </Link>
 
             {/* Collages Dropdown */}
             <div className="relative group">
-              <button className="flex items-center py-5 px-3 text-[#214fc6] uppercase font-semibold hover:text-blue-300">
+              <button
+                className="flex items-center py-5 px-3 text-white uppercase font-semibold hover:text-blue-300"
+                onClick={() =>
+                  setIsDivisionsDropdownOpen(!isDivisionsDropdownOpen)
+                }
+              >
                 Collages <MdKeyboardArrowDown />
               </button>
-              <div className="absolute hidden  group-hover:block bg-white text-[#214fc6] shadow-lg top-full w-48 pt-2">
-                {/* Machined Parts */}
+              <div className="absolute hidden  group-hover:block bg-blue-700 text-white shadow-lg top-full w-48 pt-2">
                 <div
                   className="relative group"
                   onMouseEnter={() => setIsIndianCollagesSubDropdownOpen(true)}
                   onMouseLeave={() => isIndianCollagesSubDropdownOpen(false)}
                 >
-                  <span className="flex items-center px-4 py-2 cursor-pointer hover:bg-[#214fc6] hover:text-white font-semibold">
+                  <span className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-5">
                     Indian Collages <IoMdArrowDropright size={20} />
                   </span>
+
                   {isIndianCollagesSubDropdownOpen && (
-                    <div className="absolute left-full top-0 bg-white w-[180px]">
+                    <div className="absolute left-full top-0 bg-blue-700 w-[180px]">
                       <Link
-                        to="EngineeringPlastics"
-                        className="block px-4 py-2 hover:bg-[#214fc6] hover:text-white font-semibold capitalize"
+                        to="btech"
+                        className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-5"
                         onClick={handleLinkClick}
                       >
                         Indian Collages
                       </Link>
                       <Link
                         to="/metalpart"
-                        className="block px-4 py-2 hover:bg-[#214fc6] hover:text-white font-semibold capitalize"
+                        className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-5"
                         onClick={handleLinkClick}
                       >
                         Abrod Collages
@@ -128,28 +128,28 @@ const Navbar = () => {
                   onMouseEnter={() => setIsAbrodCollagesSubDropdownOpen(true)}
                   onMouseLeave={() => setIsAbrodCollagesSubDropdownOpen(false)}
                 >
-                  <span className="flex items-center px-4 py-2 cursor-pointer hover:bg-[#214fc6] hover:text-white font-semibold">
+                  <span className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-5">
                     Abrod Collages <IoMdArrowDropright size={20} />
                   </span>
                   {isAbrodCollagesSubDropdownOpen && (
-                    <div className="absolute left-full top-0 bg-white w-[180px]">
+                    <div className="absolute left-full top-0 bg-blue-700 w-[180px]">
                       <Link
                         to="EngineeringPlastics"
-                        className="block px-4 py-2 hover:bg-[#214fc6] hover:text-white font-semibold capitalize"
+                        className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-5"
                         onClick={handleLinkClick}
                       >
                         Indian Collages
                       </Link>
                       <Link
                         to="/metalpart"
-                        className="block px-4 py-2 hover:bg-[#214fc6] hover:text-white font-semibold capitalize"
+                        className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-5"
                         onClick={handleLinkClick}
                       >
                         Abrod Collages
                       </Link>
                       <Link
                         to="/metalpart"
-                        className="block px-4 py-2 hover:bg-[#214fc6] hover:text-white font-semibold capitalize"
+                        className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-5"
                         onClick={handleLinkClick}
                       >
                         Abrod Collages
@@ -163,43 +163,43 @@ const Navbar = () => {
             {/* Cources Dropdown */}
             <div className="relative group">
               <button
-                className="flex items-center py-5 px-3 text-[#214fc6] uppercase font-semibold hover:text-blue-300"
+                className="flex items-center py-5 px-3 text-white uppercase font-semibold hover:text-blue-300"
                 onClick={() =>
                   setIsDivisionsDropdownOpen(!isDivisionsDropdownOpen)
                 }
               >
                 Cources <MdKeyboardArrowDown />
               </button>
-              <div className="absolute hidden group-hover:block bg-white text-[#214fc6] shadow-lg top-full w-48 pt-2">
+              <div className="absolute hidden group-hover:block bg-blue-700 text-white shadow-lg top-full w-48 pt-2">
                 {/* Machined Parts */}
                 <div
                   className="relative group"
                   onMouseEnter={() => setIsEngineeringSubDropdownOpen(true)}
                   onMouseLeave={() => setIsEngineeringSubDropdownOpen(false)}
                 >
-                  <span className="flex items-center px-4 py-2 cursor-pointer hover:bg-[#214fc6] hover:text-white font-semibold">
+                  <span className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-5">
                     Engineering
                     <IoMdArrowDropright size={20} />
                   </span>
                   {isEngineeringSubDropdownOpen && (
-                    <div className="absolute right-full top-0 bg-white w-[180px]">
+                    <div className="absolute right-full top-0 bg-blue-700 w-[180px]">
                       <Link
                         to="EngineeringPlastics"
-                        className="block px-4 py-2 hover:bg-[#214fc6] hover:text-white font-semibold capitalize"
+                        className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-5"
                         onClick={handleLinkClick}
                       >
                         B.Tech
                       </Link>
                       <Link
                         to="/metalpart"
-                        className="block px-4 py-2 hover:bg-[#214fc6] hover:text-white font-semibold capitalize"
+                        className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-5"
                         onClick={handleLinkClick}
                       >
                         M.Tech
                       </Link>
                       <Link
                         to="/MicroMachining"
-                        className="block px-4 py-2 hover:bg-[#214fc6] hover:text-white font-semibold capitalize"
+                        className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-5"
                         onClick={handleLinkClick}
                       >
                         Diploma
@@ -212,36 +212,36 @@ const Navbar = () => {
                   onMouseEnter={() => setIsMedicalSubDropdownOpen(true)}
                   onMouseLeave={() => setIsMedicalSubDropdownOpen(false)}
                 >
-                  <span className="flex items-center px-4 py-2 cursor-pointer hover:bg-[#214fc6] hover:text-white font-semibold">
+                  <span className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-5">
                     Medical
                     <IoMdArrowDropright size={20} />
                   </span>
                   {isMedicalSubDropdownOpen && (
-                    <div className="absolute left-full top-0 bg-white w-[180px]">
+                    <div className="absolute left-full top-0 bg-blue-700 w-[180px]">
                       <Link
                         to="EngineeringPlastics"
-                        className="block px-4 py-2 hover:bg-[#214fc6] hover:text-white font-semibold capitalize"
+                        className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-5"
                         onClick={handleLinkClick}
                       >
                         MBBS
                       </Link>
                       <Link
                         to="/metalpart"
-                        className="block px-4 py-2 hover:bg-[#214fc6] hover:text-white font-semibold capitalize"
+                        className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-5"
                         onClick={handleLinkClick}
                       >
                         BHMS
                       </Link>
                       <Link
                         to="/MicroMachining"
-                        className="block px-4 py-2 hover:bg-[#214fc6] hover:text-white font-semibold capitalize"
+                        className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-5"
                         onClick={handleLinkClick}
                       >
                         BAMS
                       </Link>
                       <Link
                         to="/MicroMachining"
-                        className="block px-4 py-2 hover:bg-[#214fc6] hover:text-white font-semibold capitalize"
+                        className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-5"
                         onClick={handleLinkClick}
                       >
                         MD
@@ -254,50 +254,50 @@ const Navbar = () => {
                   onMouseEnter={() => setIsManagementSubDropdownOpen(true)}
                   onMouseLeave={() => setIsManagementSubDropdownOpen(false)}
                 >
-                  <span className="flex items-center px-4 py-2 cursor-pointer hover:bg-[#214fc6] hover:text-white font-semibold">
+                  <span className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-5">
                     Management
                     <IoMdArrowDropright size={20} />
                   </span>
                   {isManagementSubDropdownOpen && (
-                    <div className="absolute left-full top-0 bg-white w-[180px]">
+                    <div className="absolute left-full top-0 bg-blue-700 w-[180px]">
                       <Link
                         to="EngineeringPlastics"
-                        className="block px-4 py-2 hover:bg-[#214fc6] hover:text-white font-semibold capitalize"
+                        className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-5"
                         onClick={handleLinkClick}
                       >
                         MBA
                       </Link>
                       <Link
                         to="/metalpart"
-                        className="block px-4 py-2 hover:bg-[#214fc6] hover:text-white font-semibold capitalize"
+                        className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-5"
                         onClick={handleLinkClick}
                       >
                         PGDM
                       </Link>
                       <Link
                         to="/MicroMachining"
-                        className="block px-4 py-2 hover:bg-[#214fc6] hover:text-white font-semibold capitalize"
+                        className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-5"
                         onClick={handleLinkClick}
                       >
                         MCA
                       </Link>
                       <Link
                         to="/MicroMachining"
-                        className="block px-4 py-2 hover:bg-[#214fc6] hover:text-white font-semibold capitalize"
+                        className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-5"
                         onClick={handleLinkClick}
                       >
                         BCA
                       </Link>
                       <Link
                         to="/MicroMachining"
-                        className="block px-4 py-2 hover:bg-[#214fc6] hover:text-white font-semibold capitalize"
+                        className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-5"
                         onClick={handleLinkClick}
                       >
                         BBA NORMAL
                       </Link>
                       <Link
                         to="/MicroMachining"
-                        className="block px-4 py-2 hover:bg-[#214fc6] hover:text-white font-semibold capitalize"
+                        className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-5"
                         onClick={handleLinkClick}
                       >
                         BBA IN SPECIALIZATION
@@ -310,36 +310,36 @@ const Navbar = () => {
                   onMouseEnter={() => setIsNursingSubDropdownOpen(true)}
                   onMouseLeave={() => setIsNursingSubDropdownOpen(false)}
                 >
-                  <span className="flex items-center px-4 py-2 cursor-pointer hover:bg-[#214fc6] hover:text-white font-semibold">
+                  <span className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-5">
                     Nursing
                     <IoMdArrowDropright size={20} />
                   </span>
                   {isNursingSubDropdownOpen && (
-                    <div className="absolute left-full top-0 bg-white w-[180px]">
+                    <div className="absolute left-full top-0 bg-blue-700 w-[180px]">
                       <Link
                         to="EngineeringPlastics"
-                        className="block px-4 py-2 hover:bg-[#214fc6] hover:text-white font-semibold capitalize"
+                        className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-5"
                         onClick={handleLinkClick}
                       >
                         GNM
                       </Link>
                       <Link
                         to="/metalpart"
-                        className="block px-4 py-2 hover:bg-[#214fc6] hover:text-white font-semibold capitalize"
+                        className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-5"
                         onClick={handleLinkClick}
                       >
                         B.SC NURSING
                       </Link>
                       <Link
                         to="/MicroMachining"
-                        className="block px-4 py-2 hover:bg-[#214fc6] hover:text-white font-semibold capitalize"
+                        className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-5"
                         onClick={handleLinkClick}
                       >
                         M.SC NURSING
                       </Link>
                       <Link
                         to="/MicroMachining"
-                        className="block px-4 py-2 hover:bg-[#214fc6] hover:text-white font-semibold capitalize"
+                        className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-5"
                         onClick={handleLinkClick}
                       >
                         ANM
@@ -352,29 +352,29 @@ const Navbar = () => {
                   onMouseEnter={() => setIsPharmacySubDropdownOpen(true)}
                   onMouseLeave={() => setIsPharmacySubDropdownOpen(false)}
                 >
-                  <span className="flex items-center px-4 py-2 cursor-pointer hover:bg-[#214fc6] hover:text-white font-semibold">
+                  <span className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-5">
                     Pharmacy
                     <IoMdArrowDropright size={20} />
                   </span>
                   {isPharmacySubDropdownOpen && (
-                    <div className="absolute left-full top-0 bg-white w-[180px]">
+                    <div className="absolute left-full top-0 bg-blue-700 w-[180px]">
                       <Link
                         to="EngineeringPlastics"
-                        className="block px-4 py-2 hover:bg-[#214fc6] hover:text-white font-semibold capitalize"
+                        className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-5"
                         onClick={handleLinkClick}
                       >
                         D pharma
                       </Link>
                       <Link
                         to="/metalpart"
-                        className="block px-4 py-2 hover:bg-[#214fc6] hover:text-white font-semibold capitalize"
+                        className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-5"
                         onClick={handleLinkClick}
                       >
                         B pharma
                       </Link>
                       <Link
                         to="/MicroMachining"
-                        className="block px-4 py-2 hover:bg-[#214fc6] hover:text-white font-semibold capitalize"
+                        className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-5"
                         onClick={handleLinkClick}
                       >
                         M pharma
@@ -384,14 +384,14 @@ const Navbar = () => {
                 </div>
                 <Link
                   to="/RopewaySolutions"
-                  className="block px-4 py-2 hover:bg-[#214fc6] hover:text-white font-semibold"
+                  className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-5"
                   onClick={handleLinkClick}
                 >
                   Agriculture
                 </Link>
                 <Link
                   to="/SpecialPurposeMachines"
-                  className="block px-4 py-2 hover:bg-[#214fc6] hover:text-white font-semibold"
+                  className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-5"
                   onClick={handleLinkClick}
                 >
                   LAW
@@ -399,14 +399,14 @@ const Navbar = () => {
 
                 <Link
                   to="/SpecialPurposeMachines"
-                  className="block px-4 py-2 hover:bg-[#214fc6] hover:text-white font-semibold"
+                  className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-5"
                   onClick={handleLinkClick}
                 >
                   Paramedical
                 </Link>
                 <Link
                   to="/SpecialPurposeMachines"
-                  className="block px-4 py-2 hover:bg-[#214fc6] hover:text-white font-semibold"
+                  className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-5"
                   onClick={handleLinkClick}
                 >
                   Mass Communication
@@ -417,29 +417,29 @@ const Navbar = () => {
                   onMouseEnter={() => setIsMiscellaneousSubDropdownOpen(true)}
                   onMouseLeave={() => setIsMiscellaneousSubDropdownOpen(false)}
                 >
-                  <span className="flex items-center px-4 py-2 cursor-pointer hover:bg-[#214fc6] hover:text-white font-semibold">
+                  <span className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-5">
                     Facility of Education
                     <IoMdArrowDropright size={20} />
                   </span>
                   {isMiscellaneousSubDropdownOpen && (
-                    <div className="absolute left-full top-0 bg-white w-[180px]">
+                    <div className="absolute left-full top-0 bg-blue-700 w-[180px]">
                       <Link
                         to="/EngineeringPlasticsTrading"
-                        className="block px-4 py-2 hover:bg-[#214fc6] hover:text-white font-semibold capitalize"
+                        className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-5"
                         onClick={handleLinkClick}
                       >
                         B.ED
                       </Link>
                       <Link
                         to="/fabrication"
-                        className="block px-4 py-2 hover:bg-[#214fc6] hover:text-white font-semibold capitalize"
+                        className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-5"
                         onClick={handleLinkClick}
                       >
                         M.ED
                       </Link>
                       <Link
                         to="/ReverseEngineering"
-                        className="block px-4 py-2 hover:bg-[#214fc6] hover:text-white font-semibold capitalize"
+                        className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-5"
                         onClick={handleLinkClick}
                       >
                         D.LED
@@ -450,23 +450,46 @@ const Navbar = () => {
               </div>
             </div>
 
-            {/* <Link
-              to="/newsroom"
-              className="py-5 px-3 text-[#214fc6] uppercase font-semibold hover:text-blue-300"
-              onClick={handleLinkClick}
-            >
-              Newsroom
-            </Link> */}
-            <Link
-              to="/about"
-              className="py-5 px-3 text-[#214fc6] uppercase font-semibold hover:text-blue-300"
-              onClick={handleLinkClick}
-            >
-              About
-            </Link>
+            <div className="relative group">
+              <button
+                className="flex items-center py-5 px-3 text-white uppercase font-semibold hover:text-blue-300"
+                onClick={() =>
+                  setIsDivisionsDropdownOpen(!isDivisionsDropdownOpen)
+                }
+              >
+                Service <MdKeyboardArrowDown />
+              </button>
+              <div className="absolute hidden  group-hover:block bg-blue-700 text-white shadow-lg top-full w-48 pt-2">
+                <div className="relative group">
+                  <span className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-5">
+                    Career Counseling
+                  </span>
+
+                  <span className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-5">
+                    Career Advisor
+                  </span>
+                  <span className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-5">
+                    Admission Guidance
+                  </span>
+                  <span className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-5">
+                    Education Loan Assistance
+                  </span>
+                  <span className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-5">
+                    Scholarship
+                  </span>
+                  <span className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-5">
+                    Placement Assistance
+                  </span>
+                  <span className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-5">
+                    Loan Guardian Service
+                  </span>
+                </div>
+              </div>
+            </div>
+
             <Link
               to="/contact"
-              className="py-5 px-3 text-[#214fc6] uppercase font-semibold hover:text-blue-300"
+              className="py-5 px-3 text-white uppercase font-semibold hover:text-blue-300"
               onClick={handleLinkClick}
             >
               Contact
@@ -477,7 +500,7 @@ const Navbar = () => {
           <div className="lg:hidden">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="text-4xl text-[#214fc6]"
+              className="text-4xl text-white"
             >
               {isMobileMenuOpen ? "" : <CgMenuRightAlt />}
             </button>
@@ -487,13 +510,13 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       <div
-        className={`fixed top-0 right-0 h-full bg-white p-4 text-[#214fc6] w-1/2 transform transition-transform duration-300 z-50 ${
+        className={`fixed top-0 right-0 h-full bg-blue-700 p-4 text-white w-2/3 transform transition-transform duration-300 z-50 ${
           isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
         <button
           onClick={() => setIsMobileMenuOpen(false)}
-          className="text-4xl text-[#214fc6] absolute top-4 right-4"
+          className="text-4xl text-white absolute top-4 right-4"
         >
           <CgClose />
         </button>
@@ -501,7 +524,7 @@ const Navbar = () => {
           <Link
             to="/"
             onClick={handleLinkClick}
-            // className="hover:bg-white hover:text-[#214fc6] p-4"
+            // className="hover:bg-blue-700 hover:text-white p-4"
           >
             Home
           </Link>
@@ -524,15 +547,15 @@ const Navbar = () => {
               <div className="pl-4">
                 <button
                   onClick={() =>
-                    setIsAbrodCollagesSubDropdownOpen(
-                      !isAbrodCollagesSubDropdownOpen
+                    setIsIndinanCollageSubDropdownOpen(
+                      !isIndinanCollageSubDropdownOpen
                     )
                   }
                   className="flex items-center justify-between w-full"
                 >
                   Indian Collages <IoMdArrowDropright size={20} />
                 </button>
-                {isAbrodCollagesSubDropdownOpen && (
+                {isIndinanCollageSubDropdownOpen && (
                   <div className="pl-4">
                     <Link to="/Indian Collages 1" onClick={handleLinkClick}>
                       Indian Collages 1
@@ -590,15 +613,15 @@ const Navbar = () => {
               <div className="pl-4">
                 <button
                   onClick={() =>
-                    setIsIndinanCollageSubDropdownOpen(
-                      !isIndinanCollageSubDropdownOpen
+                    setIsEngineeringSubDropdownOpen(
+                      !isEngineeringSubDropdownOpen
                     )
                   }
                   className="flex items-center justify-between w-full"
                 >
                   Engineering <IoMdArrowDropright size={20} />
                 </button>
-                {isIndinanCollageSubDropdownOpen && (
+                {isEngineeringSubDropdownOpen && (
                   <div className="pl-4">
                     <Link to="/EngineeringPlastics" onClick={handleLinkClick}>
                       B.tech
@@ -615,15 +638,13 @@ const Navbar = () => {
                 )}
                 <button
                   onClick={() =>
-                    setIsIndinanCollageSubDropdownOpen(
-                      !isIndinanCollageSubDropdownOpen
-                    )
+                    setIsMedicalSubDropdownOpen(!isMedicalSubDropdownOpen)
                   }
                   className="flex items-center justify-between w-full"
                 >
                   Medical <IoMdArrowDropright size={20} />
                 </button>
-                {isIndinanCollageSubDropdownOpen && (
+                {isMedicalSubDropdownOpen && (
                   <div className="pl-4">
                     <Link to="/EngineeringPlastics" onClick={handleLinkClick}>
                       MBBS
@@ -636,6 +657,7 @@ const Navbar = () => {
                     <Link to="/MicroMachining" onClick={handleLinkClick}>
                       BAMS
                     </Link>
+                    <br />
                     <Link to="/MicroMachining" onClick={handleLinkClick}>
                       MD
                     </Link>
@@ -643,15 +665,13 @@ const Navbar = () => {
                 )}
                 <button
                   onClick={() =>
-                    setIsIndinanCollageSubDropdownOpen(
-                      !isIndinanCollageSubDropdownOpen
-                    )
+                    setIsManagementSubDropdownOpen(!isManagementSubDropdownOpen)
                   }
                   className="flex items-center justify-between w-full"
                 >
                   Management <IoMdArrowDropright size={20} />
                 </button>
-                {isIndinanCollageSubDropdownOpen && (
+                {isManagementSubDropdownOpen && (
                   <div className="pl-4">
                     <Link to="/EngineeringPlastics" onClick={handleLinkClick}>
                       MBA
@@ -664,12 +684,15 @@ const Navbar = () => {
                     <Link to="/MicroMachining" onClick={handleLinkClick}>
                       MCA
                     </Link>
+                    <br />
                     <Link to="/MicroMachining" onClick={handleLinkClick}>
                       BCA
                     </Link>
+                    <br />
                     <Link to="/MicroMachining" onClick={handleLinkClick}>
                       BBA NORMAL
                     </Link>
+                    <br />
                     <Link to="/MicroMachining" onClick={handleLinkClick}>
                       BBA IN SPECIALIZATION
                     </Link>
@@ -677,15 +700,13 @@ const Navbar = () => {
                 )}
                 <button
                   onClick={() =>
-                    setIsIndinanCollageSubDropdownOpen(
-                      !isIndinanCollageSubDropdownOpen
-                    )
+                    setIsNursingSubDropdownOpen(!isNursingSubDropdownOpen)
                   }
                   className="flex items-center justify-between w-full"
                 >
                   Nursing <IoMdArrowDropright size={20} />
                 </button>
-                {isIndinanCollageSubDropdownOpen && (
+                {isNursingSubDropdownOpen && (
                   <div className="pl-4">
                     <Link to="/EngineeringPlastics" onClick={handleLinkClick}>
                       GNM
@@ -698,6 +719,7 @@ const Navbar = () => {
                     <Link to="/MicroMachining" onClick={handleLinkClick}>
                       M.SC NURSING
                     </Link>
+                    <br />
                     <Link to="/MicroMachining" onClick={handleLinkClick}>
                       ANM
                     </Link>
@@ -705,15 +727,13 @@ const Navbar = () => {
                 )}
                 <button
                   onClick={() =>
-                    setIsIndinanCollageSubDropdownOpen(
-                      !isIndinanCollageSubDropdownOpen
-                    )
+                    setIsPharmacySubDropdownOpen(!isPharmacySubDropdownOpen)
                   }
                   className="flex items-center justify-between w-full"
                 >
                   Pharmacy <IoMdArrowDropright size={20} />
                 </button>
-                {isIndinanCollageSubDropdownOpen && (
+                {isPharmacySubDropdownOpen && (
                   <div className="pl-4">
                     <Link to="/EngineeringPlastics" onClick={handleLinkClick}>
                       D pharma
@@ -729,19 +749,6 @@ const Navbar = () => {
                   </div>
                 )}
 
-                <Link to="/RopewaySolutions" onClick={handleLinkClick}>
-                  Agriculture
-                </Link>
-                <br />
-                <Link to="/SpecialPurposeMachines" onClick={handleLinkClick}>
-                  LAW
-                </Link>
-                <Link to="/SpecialPurposeMachines" onClick={handleLinkClick}>
-                  Paramedical
-                </Link>
-                <Link to="/SpecialPurposeMachines" onClick={handleLinkClick}>
-                  Mass Communication
-                </Link>
                 <button
                   onClick={() =>
                     setIsMiscellaneousSubDropdownOpen(
@@ -770,13 +777,60 @@ const Navbar = () => {
                     </Link>
                   </div>
                 )}
+
+                <Link to="/RopewaySolutions" onClick={handleLinkClick}>
+                  Agriculture
+                </Link>
+                <br />
+                <Link to="/SpecialPurposeMachines" onClick={handleLinkClick}>
+                  LAW
+                </Link>
+                <br />
+                <Link to="/SpecialPurposeMachines" onClick={handleLinkClick}>
+                  Paramedical
+                </Link>
+                <br />
+                <Link to="/SpecialPurposeMachines" onClick={handleLinkClick}>
+                  Mass Communication
+                </Link>
               </div>
             )}
           </div>
 
-          {/* <Link to="/newsroom" onClick={handleLinkClick}>
-            Newsroom
-          </Link> */}
+          <div>
+            <button
+              onClick={() => setIsserviceDropdownOpen(!isservicveDropdownOpen)}
+              className="flex items-center justify-between w-full"
+            >
+              Service <MdKeyboardArrowDown />
+            </button>
+            {isservicveDropdownOpen && (
+              <div className="pl-4">
+                <button className="flex items-center justify-between w-full">
+                  Career Counseling
+                </button>
+
+                <button className="flex items-center justify-between w-full">
+                  Career Advisor
+                </button>
+                <button className="flex items-center justify-between w-full">
+                  Admission Guidance
+                </button>
+                <button className="flex items-center justify-between w-full">
+                  Education Loan Assistance
+                </button>
+                <button className="flex items-center justify-between w-full">
+                  Scholarship
+                </button>
+                <button className="flex items-center justify-between w-full">
+                  Placement Assistance
+                </button>
+                <button className="flex items-center justify-between w-full">
+                  Loan Guardian Service
+                </button>
+              </div>
+            )}
+          </div>
           <Link to="/contact" onClick={handleLinkClick}>
             Contact
           </Link>
