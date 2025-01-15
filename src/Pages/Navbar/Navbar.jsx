@@ -94,11 +94,12 @@ const Navbar = () => {
               >
                 Collages <MdKeyboardArrowDown />
               </button>
-              <div className="absolute hidden  group-hover:block bg-blue-700 text-white shadow-lg top-full w-48 pt-2">
+              <div className="absolute hidden group-hover:block bg-blue-700 text-white shadow-lg top-full w-48 pt-2">
+                {/* Indian Collages */}
                 <div
                   className="relative group"
                   onMouseEnter={() => setIsIndianCollagesSubDropdownOpen(true)}
-                  onMouseLeave={() => isIndianCollagesSubDropdownOpen(false)}
+                  onMouseLeave={() => setIsIndianCollagesSubDropdownOpen(false)} // Fixed
                 >
                   <span className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-5">
                     Indian Collages <IoMdArrowDropright size={20} />
@@ -107,52 +108,62 @@ const Navbar = () => {
                   {isIndianCollagesSubDropdownOpen && (
                     <div className="absolute left-full top-0 bg-blue-700 w-[180px]">
                       <Link
-                        to="btech"
+                        to="/indianBtech"
                         className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-5"
                         onClick={handleLinkClick}
                       >
-                        Indian Collages
+                        B.Tech Collages
                       </Link>
                       <Link
-                        to="/metalpart"
+                        to="/indianMbbs"
                         className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-5"
                         onClick={handleLinkClick}
                       >
-                        Abrod Collages
+                        MBBS Collages
+                      </Link>
+                      <Link
+                        to="/indianLaw"
+                        className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-5"
+                        onClick={handleLinkClick}
+                      >
+                        Law Collages
                       </Link>
                     </div>
                   )}
                 </div>
+
+                {/* Abroad Collages */}
                 <div
                   className="relative group"
                   onMouseEnter={() => setIsAbrodCollagesSubDropdownOpen(true)}
-                  onMouseLeave={() => setIsAbrodCollagesSubDropdownOpen(false)}
+                  onMouseLeave={() => setIsAbrodCollagesSubDropdownOpen(false)} // Fixed
                 >
                   <span className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-5">
-                    Abrod Collages <IoMdArrowDropright size={20} />
+                    Abroad Collages <IoMdArrowDropright size={20} />
                   </span>
+
                   {isAbrodCollagesSubDropdownOpen && (
                     <div className="absolute left-full top-0 bg-blue-700 w-[180px]">
                       <Link
-                        to="EngineeringPlastics"
+                        to="/abrodBtech"
                         className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-5"
                         onClick={handleLinkClick}
                       >
-                        Indian Collages
+                        B.Tech Collages
                       </Link>
                       <Link
-                        to="/metalpart"
+                        to="/abrodMbbs"
                         className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-5"
                         onClick={handleLinkClick}
                       >
-                        Abrod Collages
+                        MBBS Collages
                       </Link>
                       <Link
-                        to="/metalpart"
+                        to="/abrodLaw"
                         className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-5"
                         onClick={handleLinkClick}
                       >
-                        Abrod Collages
+                        Law Collages
                       </Link>
                     </div>
                   )}
