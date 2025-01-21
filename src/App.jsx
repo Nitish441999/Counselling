@@ -21,6 +21,17 @@ const CounsellingForm = React.lazy(() =>
   import("./Pages/CounsellingForm/CounsellingForm")
 );
 
+// ScrollToTop Component
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0); // Scroll to top on route change
+  }, [pathname]);
+
+  return null; // This component does not render anything
+}
+
 function App() {
   const [isLoading, setIsLoading] = useState(false); // State to control loading screen
   const location = useLocation(); // Get the current route location
@@ -38,6 +49,7 @@ function App() {
   return (
     <div>
       <Navbar />
+      <ScrollToTop /> {/* Add ScrollToTop here */}
       {isLoading ? (
         <Loading /> // Display loading screen
       ) : (

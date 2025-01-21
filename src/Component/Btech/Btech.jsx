@@ -1,6 +1,9 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 function Btech() {
+  const navigate = useNavigate(); // Hook for navigation
+
   const products = [
     {
       id: 1,
@@ -28,6 +31,10 @@ function Btech() {
     },
   ];
 
+  const handleCounsellingClick = () => {
+    navigate("/CounsellingForm"); // Navigate to the CounsellingForm page
+  };
+
   return (
     <div className="p-6 flex justify-center">
       <div className="max-w-[90.33%] w-full">
@@ -52,7 +59,10 @@ function Btech() {
                 <h3 className="text-lg font-semibold mb-2">{product.name}</h3>
                 {/* Action Buttons */}
                 <div className="flex justify-center space-x-4">
-                  <button className="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600">
+                  <button
+                    onClick={handleCounsellingClick} // Handle the click event
+                    className="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600"
+                  >
                     Need Counselling
                   </button>
                   <button className="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600">

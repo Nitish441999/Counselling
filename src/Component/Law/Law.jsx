@@ -1,12 +1,18 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 function Law() {
+  const navigate = useNavigate(); // Hook for navigation
   const products = [
     { id: 1, name: "Alliance University", image: "https://careercounsellingcentre.com/wp-content/uploads/2024/04/Alliance-University.png" },
     { id: 2, name: "ITM Business School", image: "https://careercounsellingcentre.com/wp-content/uploads/2024/04/ITM-Business-School.png" },
     { id: 3, name: "S. P. Jain Institute of Management", image: "https://careercounsellingcentre.com/wp-content/uploads/2024/04/S.-P.-Jain-Institute-of-Management-.png" },
     { id: 4, name: "Ramaiah Institute Of Technology", image: "https://careercounsellingcentre.com/wp-content/uploads/2024/04/Ramaiah-Institute-Of-Technology.png" },
   ];
+
+  const handleCounsellingClick = () => {
+    navigate("/CounsellingForm"); // Navigate to /CounsellingForm
+  };
 
   return (
     <div className="p-6 flex justify-center">
@@ -30,7 +36,10 @@ function Law() {
                 <h3 className="text-lg font-semibold mb-2">{product.name}</h3>
                 {/* Action Buttons */}
                 <div className="flex justify-center space-x-4">
-                  <button className="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600">
+                  <button
+                    onClick={handleCounsellingClick} // Click handler
+                    className="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600"
+                  >
                     Need Counselling
                   </button>
                   <button className="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600">
