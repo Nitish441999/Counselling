@@ -3,194 +3,184 @@ import React, { useState } from "react";
 const CounsellingForm = () => {
   const [formData, setFormData] = useState({
     name: "",
-    email: "",
+    dob: "",
     phone: "",
-    course: "",
-    message: "",
-    tenthMarksheet: null,
-    twelfthMarksheet: null,
+    email: "",
+    aadhar: "",
+    pan: "",
+    marks10: "",
+    year10: "",
+    stream12: "",
+    marks12: "",
+    courses: "",
+    exam: "",
+    regNumber: "",
+    rank: "",
+    fatherName: "",
+    fatherNumber: "",
+    address: "",
+    motherName: "",
+    motherNumber: "",
   });
 
   const handleChange = (e) => {
-    const { name, value, files } = e.target;
-    if (files) {
-      setFormData({ ...formData, [name]: files[0] }); // Handling file input
-    } else {
-      setFormData({ ...formData, [name]: value }); // Handling text input
-    }
+    const { id, value } = e.target;
+    setFormData({ ...formData, [id]: value });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission logic here
-    console.log("Form Data:", formData);
-    alert("Your form has been submitted!");
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      course: "",
-      message: "",
-      tenthMarksheet: null,
-      twelfthMarksheet: null,
-    });
+    console.log("Form Data Submitted:", formData);
   };
 
   return (
-    <div className="flex justify-center py-6 px-4">
-      <div className="max-w-[90.33%] w-full bg-gray-100 rounded-lg shadow-md p-6">
+    <div className="bg-gray-100 p-6 min-h-screen flex items-center justify-center">
+      <div className="max-w-7xl w-full bg-white p-8 rounded-lg shadow-md">
         <h2 className="text-2xl font-bold mb-6 text-center">
-          Need Counselling. Fill the form
+          Need counseling form
         </h2>
-        <form onSubmit={handleSubmit} className="space-y-4">
-          {/* Name Field */}
-          <div>
-            <label
-              htmlFor="name"
-              className="block text-sm font-medium text-gray-700"
-            >
-              Full Name
-            </label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              placeholder="Enter your full name"
-              className="mt-1 p-2 h-10 block w-full rounded-md border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
-              required
-            />
-          </div>
-
-          {/* Email Field */}
-          <div>
-            <label
-              htmlFor="email"
-              className="block text-sm font-medium text-gray-700"
-            >
-              Email Address
-            </label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              placeholder="Enter your email"
-              className="mt-1 h-10 block w-full rounded-md px-2 border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
-              required
-            />
-          </div>
-
-          {/* Phone Number Field */}
-          <div>
-            <label
-              htmlFor="phone"
-              className="block text-sm font-medium text-gray-700"
-            >
-              Phone Number
-            </label>
-            <input
-              type="tel"
-              id="phone"
-              name="phone"
-              value={formData.phone}
-              onChange={handleChange}
-              placeholder="Enter your phone number"
-              className="mt-1 h-10 block w-full rounded-md px-2 border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
-              required
-            />
-          </div>
-
-          {/* Course Selection */}
-          <div>
-            <label
-              htmlFor="course"
-              className="block text-sm font-medium text-gray-700"
-            >
-              Select Course
-            </label>
-            <select
-              id="course"
-              name="course"
-              value={formData.course}
-              onChange={handleChange}
-              className="mt-1 h-10 block w-full p-2 rounded-md border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
-              required
-            >
-              <option value="" disabled>
-                Select a course
-              </option>
-              <option value="MBBS">MBBS</option>
-              <option value="Engineering">Engineering</option>
-              <option value="Management">Management</option>
-              <option value="Law">Law</option>
-            </select>
-          </div>
-
-          {/* Message Field */}
-          <div>
-            <label
-              htmlFor="message"
-              className="block text-sm font-medium text-gray-700"
-            >
-              Message (Optional)
+        <form
+          onSubmit={handleSubmit}
+          className="grid grid-cols-1 md:grid-cols-2 gap-6"
+        >
+          {[
+            {
+              id: "name",
+              label: "Name",
+              type: "text",
+              placeholder: "Enter your name",
+            },
+            { id: "dob", label: "Date of Birth", type: "date" },
+            {
+              id: "phone",
+              label: "Phone Number",
+              type: "tel",
+              placeholder: "Enter your phone number",
+            },
+            {
+              id: "email",
+              label: "Email ID",
+              type: "email",
+              placeholder: "Enter your email",
+            },
+            {
+              id: "aadhar",
+              label: "Aadhar Card Number",
+              type: "text",
+              placeholder: "Enter Aadhar card number",
+            },
+            {
+              id: "pan",
+              label: "PAN Card Number",
+              type: "text",
+              placeholder: "Enter PAN card number",
+            },
+            {
+              id: "marks10",
+              label: "Class 10th Marks",
+              type: "number",
+              placeholder: "Enter Class 10th marks",
+            },
+            {
+              id: "year10",
+              label: "Class 10th Passing Year",
+              type: "number",
+              placeholder: "Enter passing year",
+            },
+            {
+              id: "stream12",
+              label: "Class 12th Stream",
+              type: "text",
+              placeholder: "Enter Class 12th stream",
+            },
+            {
+              id: "marks12",
+              label: "Class 12th Marks",
+              type: "number",
+              placeholder: "Enter Class 12th marks",
+            },
+            {
+              id: "courses",
+              label: "Required Courses Name",
+              type: "text",
+              placeholder: "Enter course names",
+            },
+            {
+              id: "exam",
+              label: "Entrance Exam Name",
+              type: "text",
+              placeholder: "Enter exam name",
+            },
+            {
+              id: "regNumber",
+              label: "Entrance Exam Registration Number",
+              type: "text",
+              placeholder: "Enter registration number",
+            },
+            {
+              id: "rank",
+              label: "Entrance Exam Ranks",
+              type: "number",
+              placeholder: "Enter rank",
+            },
+            {
+              id: "fatherName",
+              label: "Father's Name",
+              type: "text",
+              placeholder: "Enter father's name",
+            },
+            {
+              id: "fatherNumber",
+              label: "Father's Number",
+              type: "tel",
+              placeholder: "Enter father's phone number",
+            },
+            {
+              id: "motherName",
+              label: "Mother's Name",
+              type: "text",
+              placeholder: "Enter mother's name",
+            },
+            {
+              id: "motherNumber",
+              label: "Mother's Number",
+              type: "tel",
+              placeholder: "Enter mother's phone number",
+            },
+          ].map(({ id, label, type, placeholder }) => (
+            <div key={id}>
+              <label htmlFor={id} className="block font-medium mb-2">
+                {label}
+              </label>
+              <input
+                type={type}
+                id={id}
+                className="w-full p-2 border border-gray-300 rounded-lg"
+                placeholder={placeholder}
+                value={formData[id]}
+                onChange={handleChange}
+                required
+              />
+            </div>
+          ))}
+          <div className="md:col-span-2">
+            <label htmlFor="address" className="block font-medium mb-2">
+              Address
             </label>
             <textarea
-              id="message"
-              name="message"
-              value={formData.message}
+              id="address"
+              className="w-full p-2 border border-gray-300 rounded-lg"
+              placeholder="Enter address"
+              rows="3"
+              value={formData.address}
               onChange={handleChange}
-              placeholder="Enter your message"
-              className="mt-1 block w-full h-24 p-2 rounded-md border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 resize-none"
+              required
             ></textarea>
           </div>
-
-          <div className=" flex">
-            <div>
-              {/* 10th Marksheet Upload */}
-              <label
-                htmlFor="tenthMarksheet"
-                className="block text-sm font-medium text-gray-700"
-              >
-                Upload 10th Marksheet
-              </label>
-              <input
-                type="file"
-                id="tenthMarksheet"
-                name="tenthMarksheet"
-                onChange={handleChange}
-                className="mt-1 block w-full text-sm text-gray-700 border-gray-300 focus:ring-indigo-500 focus:border-indigo-500"
-                accept="image/*,application/pdf"
-                required
-              />
-            </div>
-
-            {/* 12th Marksheet Upload */}
-            <div>
-              <label
-                htmlFor="twelfthMarksheet"
-                className="block text-sm font-medium text-gray-700"
-              >
-                Upload 12th Marksheet
-              </label>
-              <input
-                type="file"
-                id="twelfthMarksheet"
-                name="twelfthMarksheet"
-                onChange={handleChange}
-                className="mt-1 block w-full text-sm text-gray-700 border-gray-300 focus:ring-indigo-500 focus:border-indigo-500"
-                accept="image/*,application/pdf"
-                required
-              />
-            </div>
-          </div>
-          {/* Submit Button */}
-          <div className="text-center">
+          <div className="md:col-span-2">
             <button
               type="submit"
-              className="px-6 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700"
+              className="w-full bg-blue-500 text-white p-2 rounded-lg hover:bg-blue-600"
             >
               Submit
             </button>

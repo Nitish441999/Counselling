@@ -1,33 +1,59 @@
-import React from "react";
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
-import Home from "./Pages/Home/Home";
+import React, { useState, useEffect, Suspense } from "react";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useLocation,
+} from "react-router-dom";
 import Navbar from "./Pages/Navbar/Navbar";
 import Footer from "./Pages/Footer/Footer";
-import Contact from "./Pages/Contact/Contact";
-import About from "./Pages/About/About";
-import MbbsCource from "./Pages/Cource/MbbsCource";
-import BtechCource from "./Pages/Cource/BtechCource";
-import LawCource from "./Pages/Cource/LawCource";
-import AllCollage from "./Pages/Collages/AllCollage";
-import CounsellingForm from "./Pages/CounsellingForm/CounsellingForm";
+import Loading from "./Component/Loading/Laoding";
+
+// Lazy load your pages
+const Home = React.lazy(() => import("./Pages/Home/Home"));
+const Contact = React.lazy(() => import("./Pages/Contact/Contact"));
+const About = React.lazy(() => import("./Pages/About/About"));
+const MbbsCource = React.lazy(() => import("./Pages/Cource/MbbsCource"));
+const BtechCource = React.lazy(() => import("./Pages/Cource/BtechCource"));
+const LawCource = React.lazy(() => import("./Pages/Cource/LawCource"));
+const AllCollage = React.lazy(() => import("./Pages/Collages/AllCollage"));
+const CounsellingForm = React.lazy(() =>
+  import("./Pages/CounsellingForm/CounsellingForm")
+);
 
 function App() {
-  const location = useLocation();
+  const [isLoading, setIsLoading] = useState(false); // State to control loading screen
+  const location = useLocation(); // Get the current route location
+
+  useEffect(() => {
+    // Show loading screen for 2 seconds on route change
+    setIsLoading(true);
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
+
+    return () => clearTimeout(timer); // Cleanup timer on component unmount
+  }, [location]); // Trigger on route change
 
   return (
     <div>
       <Navbar />
-
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/mbbsCourses" element={<MbbsCource />} />
-        <Route path="/betchCourses" element={<BtechCource />} />
-        <Route path="/lawCourses" element={<LawCource />} />
-        <Route path="/CounsellingForm" element={<CounsellingForm />} />
-        <Route path={location.pathname} element={<AllCollage />} />
-      </Routes>
+      {isLoading ? (
+        <Loading /> // Display loading screen
+      ) : (
+        <Suspense fallback={<Loading />}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/mbbsCourses" element={<MbbsCource />} />
+            <Route path="/betchCourses" element={<BtechCource />} />
+            <Route path="/lawCourses" element={<LawCource />} />
+            <Route path="/CounsellingForm" element={<CounsellingForm />} />
+            <Route path={location.pathname} element={<AllCollage />} />
+          </Routes>
+        </Suspense>
+      )}
       <Footer />
     </div>
   );

@@ -4,6 +4,7 @@ import { CgMenuRightAlt, CgClose } from "react-icons/cg";
 import { Link } from "react-router-dom";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { IoMdArrowDropright } from "react-icons/io";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -43,6 +44,12 @@ const Navbar = () => {
     setIsIndianCollagesSubDropdownOpen(false);
     setIsEngineeringSubDropdownOpen(false);
     setIsserviceDropdownOpen(false);
+  };
+  const [isServiceDropdownOpen, setIsServiceDropdownOpen] = useState(false);
+  const navigate = useNavigate(); // Initialize useNavigate
+
+  const handleNavigation = () => {
+    navigate("/CounsellingForm"); // Navigate to the desired path
   };
 
   return (
@@ -101,7 +108,7 @@ const Navbar = () => {
                   onMouseEnter={() => setIsIndianCollagesSubDropdownOpen(true)}
                   onMouseLeave={() => setIsIndianCollagesSubDropdownOpen(false)} // Fixed
                 >
-                  <span className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-5">
+                  <span className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-7">
                     Indian Collages <IoMdArrowDropright size={20} />
                   </span>
 
@@ -109,21 +116,21 @@ const Navbar = () => {
                     <div className="absolute left-full top-0 bg-blue-700 w-[180px]">
                       <Link
                         to="/indianBtech"
-                        className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-5"
+                        className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-7"
                         onClick={handleLinkClick}
                       >
                         B.Tech Collages
                       </Link>
                       <Link
                         to="/indianMbbs"
-                        className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-5"
+                        className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-7"
                         onClick={handleLinkClick}
                       >
                         MBBS Collages
                       </Link>
                       <Link
                         to="/indianLaw"
-                        className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-5"
+                        className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-7"
                         onClick={handleLinkClick}
                       >
                         Law Collages
@@ -138,7 +145,7 @@ const Navbar = () => {
                   onMouseEnter={() => setIsAbrodCollagesSubDropdownOpen(true)}
                   onMouseLeave={() => setIsAbrodCollagesSubDropdownOpen(false)} // Fixed
                 >
-                  <span className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-5">
+                  <span className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-7">
                     Abroad Collages <IoMdArrowDropright size={20} />
                   </span>
 
@@ -146,21 +153,21 @@ const Navbar = () => {
                     <div className="absolute left-full top-0 bg-blue-700 w-[180px]">
                       <Link
                         to="/abrodBtech"
-                        className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-5"
+                        className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-7"
                         onClick={handleLinkClick}
                       >
                         B.Tech Collages
                       </Link>
                       <Link
                         to="/abrodMbbs"
-                        className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-5"
+                        className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-7"
                         onClick={handleLinkClick}
                       >
                         MBBS Collages
                       </Link>
                       <Link
                         to="/abrodLaw"
-                        className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-5"
+                        className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-7"
                         onClick={handleLinkClick}
                       >
                         Law Collages
@@ -188,29 +195,29 @@ const Navbar = () => {
                   onMouseEnter={() => setIsEngineeringSubDropdownOpen(true)}
                   onMouseLeave={() => setIsEngineeringSubDropdownOpen(false)}
                 >
-                  <span className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-5">
+                  <span className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-7">
                     Engineering
                     <IoMdArrowDropright size={20} />
                   </span>
                   {isEngineeringSubDropdownOpen && (
                     <div className="absolute right-full top-0 bg-blue-700 w-[180px]">
                       <Link
-                        to="EngineeringPlastics"
-                        className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-5"
+                        to="/CounsellingForm"
+                        className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-7"
                         onClick={handleLinkClick}
                       >
                         B.Tech
                       </Link>
                       <Link
-                        to="/metalpart"
-                        className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-5"
+                        to="/CounsellingForm"
+                        className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-7"
                         onClick={handleLinkClick}
                       >
                         M.Tech
                       </Link>
                       <Link
-                        to="/MicroMachining"
-                        className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-5"
+                        to="/CounsellingForm"
+                        className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-7"
                         onClick={handleLinkClick}
                       >
                         Diploma
@@ -223,36 +230,36 @@ const Navbar = () => {
                   onMouseEnter={() => setIsMedicalSubDropdownOpen(true)}
                   onMouseLeave={() => setIsMedicalSubDropdownOpen(false)}
                 >
-                  <span className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-5">
+                  <span className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-7">
                     Medical
                     <IoMdArrowDropright size={20} />
                   </span>
                   {isMedicalSubDropdownOpen && (
                     <div className="absolute left-full top-0 bg-blue-700 w-[180px]">
                       <Link
-                        to="EngineeringPlastics"
-                        className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-5"
+                        to="/CounsellingForm"
+                        className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-7"
                         onClick={handleLinkClick}
                       >
                         MBBS
                       </Link>
                       <Link
-                        to="/metalpart"
-                        className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-5"
+                        to="/CounsellingForm"
+                        className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-7"
                         onClick={handleLinkClick}
                       >
                         BHMS
                       </Link>
                       <Link
-                        to="/MicroMachining"
-                        className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-5"
+                        to="/CounsellingForm"
+                        className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-7"
                         onClick={handleLinkClick}
                       >
                         BAMS
                       </Link>
                       <Link
-                        to="/MicroMachining"
-                        className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-5"
+                        to="/CounsellingForm"
+                        className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-7"
                         onClick={handleLinkClick}
                       >
                         MD
@@ -265,50 +272,50 @@ const Navbar = () => {
                   onMouseEnter={() => setIsManagementSubDropdownOpen(true)}
                   onMouseLeave={() => setIsManagementSubDropdownOpen(false)}
                 >
-                  <span className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-5">
+                  <span className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-7">
                     Management
                     <IoMdArrowDropright size={20} />
                   </span>
                   {isManagementSubDropdownOpen && (
                     <div className="absolute left-full top-0 bg-blue-700 w-[180px]">
                       <Link
-                        to="EngineeringPlastics"
-                        className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-5"
+                        to="/CounsellingForm"
+                        className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-7"
                         onClick={handleLinkClick}
                       >
                         MBA
                       </Link>
                       <Link
-                        to="/metalpart"
-                        className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-5"
+                        to="/CounsellingForm"
+                        className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-7"
                         onClick={handleLinkClick}
                       >
                         PGDM
                       </Link>
                       <Link
-                        to="/MicroMachining"
-                        className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-5"
+                        to="/CounsellingForm"
+                        className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-7"
                         onClick={handleLinkClick}
                       >
                         MCA
                       </Link>
                       <Link
-                        to="/MicroMachining"
-                        className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-5"
+                        to="/CounsellingForm"
+                        className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-7"
                         onClick={handleLinkClick}
                       >
                         BCA
                       </Link>
                       <Link
-                        to="/MicroMachining"
-                        className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-5"
+                        to="/CounsellingForm"
+                        className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-7"
                         onClick={handleLinkClick}
                       >
                         BBA NORMAL
                       </Link>
                       <Link
-                        to="/MicroMachining"
-                        className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-5"
+                        to="/CounsellingForm"
+                        className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-7"
                         onClick={handleLinkClick}
                       >
                         BBA IN SPECIALIZATION
@@ -321,36 +328,36 @@ const Navbar = () => {
                   onMouseEnter={() => setIsNursingSubDropdownOpen(true)}
                   onMouseLeave={() => setIsNursingSubDropdownOpen(false)}
                 >
-                  <span className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-5">
+                  <span className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-7">
                     Nursing
                     <IoMdArrowDropright size={20} />
                   </span>
                   {isNursingSubDropdownOpen && (
                     <div className="absolute left-full top-0 bg-blue-700 w-[180px]">
                       <Link
-                        to="EngineeringPlastics"
-                        className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-5"
+                        to="/CounsellingForm"
+                        className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-7"
                         onClick={handleLinkClick}
                       >
                         GNM
                       </Link>
                       <Link
-                        to="/metalpart"
-                        className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-5"
+                        to="/CounsellingForm"
+                        className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-7"
                         onClick={handleLinkClick}
                       >
                         B.SC NURSING
                       </Link>
                       <Link
-                        to="/MicroMachining"
-                        className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-5"
+                        to="/CounsellingForm"
+                        className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-7"
                         onClick={handleLinkClick}
                       >
                         M.SC NURSING
                       </Link>
                       <Link
-                        to="/MicroMachining"
-                        className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-5"
+                        to="/CounsellingForm"
+                        className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-7"
                         onClick={handleLinkClick}
                       >
                         ANM
@@ -363,29 +370,29 @@ const Navbar = () => {
                   onMouseEnter={() => setIsPharmacySubDropdownOpen(true)}
                   onMouseLeave={() => setIsPharmacySubDropdownOpen(false)}
                 >
-                  <span className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-5">
+                  <span className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-7">
                     Pharmacy
                     <IoMdArrowDropright size={20} />
                   </span>
                   {isPharmacySubDropdownOpen && (
                     <div className="absolute left-full top-0 bg-blue-700 w-[180px]">
                       <Link
-                        to="EngineeringPlastics"
-                        className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-5"
+                        to="/CounsellingForm"
+                        className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-7"
                         onClick={handleLinkClick}
                       >
                         D pharma
                       </Link>
                       <Link
-                        to="/metalpart"
-                        className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-5"
+                        to="/CounsellingForm"
+                        className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-7"
                         onClick={handleLinkClick}
                       >
                         B pharma
                       </Link>
                       <Link
-                        to="/MicroMachining"
-                        className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-5"
+                        to="/CounsellingForm"
+                        className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-7"
                         onClick={handleLinkClick}
                       >
                         M pharma
@@ -395,29 +402,29 @@ const Navbar = () => {
                 </div>
                 <Link
                   to="/RopewaySolutions"
-                  className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-5"
+                  className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-7"
                   onClick={handleLinkClick}
                 >
                   Agriculture
                 </Link>
                 <Link
-                  to="/SpecialPurposeMachines"
-                  className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-5"
+                  to="/CounsellingForm"
+                  className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-7"
                   onClick={handleLinkClick}
                 >
                   LAW
                 </Link>
 
                 <Link
-                  to="/SpecialPurposeMachines"
-                  className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-5"
+                  to="/CounsellingForm"
+                  className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-7"
                   onClick={handleLinkClick}
                 >
                   Paramedical
                 </Link>
                 <Link
-                  to="/SpecialPurposeMachines"
-                  className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-5"
+                  to="/CounsellingForm"
+                  className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-7"
                   onClick={handleLinkClick}
                 >
                   Mass Communication
@@ -428,29 +435,29 @@ const Navbar = () => {
                   onMouseEnter={() => setIsMiscellaneousSubDropdownOpen(true)}
                   onMouseLeave={() => setIsMiscellaneousSubDropdownOpen(false)}
                 >
-                  <span className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-5">
+                  <span className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-7">
                     Facility of Education
                     <IoMdArrowDropright size={20} />
                   </span>
                   {isMiscellaneousSubDropdownOpen && (
                     <div className="absolute left-full top-0 bg-blue-700 w-[180px]">
                       <Link
-                        to="/EngineeringPlasticsTrading"
-                        className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-5"
+                        to="/CounsellingForm"
+                        className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-7"
                         onClick={handleLinkClick}
                       >
                         B.ED
                       </Link>
                       <Link
-                        to="/fabrication"
-                        className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-5"
+                        to="/CounsellingForm"
+                        className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-7"
                         onClick={handleLinkClick}
                       >
                         M.ED
                       </Link>
                       <Link
-                        to="/ReverseEngineering"
-                        className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-5"
+                        to="/CounsellingForm"
+                        className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-7"
                         onClick={handleLinkClick}
                       >
                         D.LED
@@ -472,27 +479,48 @@ const Navbar = () => {
               </button>
               <div className="absolute hidden  group-hover:block bg-blue-700 text-white shadow-lg top-full w-48 pt-2">
                 <div className="relative group">
-                  <span className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-5">
+                  <span
+                    className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-7"
+                    onClick={handleNavigation}
+                  >
                     Career Counseling
                   </span>
 
-                  <span className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-5">
+                  <span
+                    className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-7"
+                    onClick={handleNavigation}
+                  >
                     Career Advisor
                   </span>
-                  <span className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-5">
+                  <span
+                    className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-7 "
+                    onClick={handleNavigation}
+                  >
                     Admission Guidance
                   </span>
-                  <span className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-5">
+                  <span
+                    className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-7 "
+                    onClick={handleNavigation}
+                  >
                     Education Loan Assistance
                   </span>
-                  <span className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-5">
+                  <span
+                    className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-7 "
+                    onClick={handleNavigation}
+                  >
                     Scholarship
                   </span>
-                  <span className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-5">
+                  <span
+                    className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-7 "
+                    onClick={handleNavigation}
+                  >
                     Placement Assistance
                   </span>
-                  <span className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-5">
-                    Loan Guardian Service
+                  <span
+                    className="flex items-center px-4 py-2 cursor-pointer font-semibold hover:bg-[#214fc6] hover:text-white transition-all duration-300 hover:pl-7 "
+                    onClick={handleNavigation}
+                  >
+                    Local Guardian Service
                   </span>
                 </div>
               </div>
@@ -634,15 +662,15 @@ const Navbar = () => {
                 </button>
                 {isEngineeringSubDropdownOpen && (
                   <div className="pl-4">
-                    <Link to="/EngineeringPlastics" onClick={handleLinkClick}>
+                    <Link to="//CounsellingForm" onClick={handleLinkClick}>
                       B.tech
                     </Link>
                     <br />
-                    <Link to="/metalpart" onClick={handleLinkClick}>
+                    <Link to="/CounsellingForm" onClick={handleLinkClick}>
                       M.Tech
                     </Link>
                     <br />
-                    <Link to="/MicroMachining" onClick={handleLinkClick}>
+                    <Link to="/CounsellingForm" onClick={handleLinkClick}>
                       Diploma
                     </Link>
                   </div>
@@ -657,19 +685,19 @@ const Navbar = () => {
                 </button>
                 {isMedicalSubDropdownOpen && (
                   <div className="pl-4">
-                    <Link to="/EngineeringPlastics" onClick={handleLinkClick}>
+                    <Link to="//CounsellingForm" onClick={handleLinkClick}>
                       MBBS
                     </Link>
                     <br />
-                    <Link to="/metalpart" onClick={handleLinkClick}>
+                    <Link to="/CounsellingForm" onClick={handleLinkClick}>
                       BHMS
                     </Link>
                     <br />
-                    <Link to="/MicroMachining" onClick={handleLinkClick}>
+                    <Link to="/CounsellingForm" onClick={handleLinkClick}>
                       BAMS
                     </Link>
                     <br />
-                    <Link to="/MicroMachining" onClick={handleLinkClick}>
+                    <Link to="/CounsellingForm" onClick={handleLinkClick}>
                       MD
                     </Link>
                   </div>
@@ -684,27 +712,27 @@ const Navbar = () => {
                 </button>
                 {isManagementSubDropdownOpen && (
                   <div className="pl-4">
-                    <Link to="/EngineeringPlastics" onClick={handleLinkClick}>
+                    <Link to="//CounsellingForm" onClick={handleLinkClick}>
                       MBA
                     </Link>
                     <br />
-                    <Link to="/metalpart" onClick={handleLinkClick}>
+                    <Link to="/CounsellingForm" onClick={handleLinkClick}>
                       PGDM
                     </Link>
                     <br />
-                    <Link to="/MicroMachining" onClick={handleLinkClick}>
+                    <Link to="/CounsellingForm" onClick={handleLinkClick}>
                       MCA
                     </Link>
                     <br />
-                    <Link to="/MicroMachining" onClick={handleLinkClick}>
+                    <Link to="/CounsellingForm" onClick={handleLinkClick}>
                       BCA
                     </Link>
                     <br />
-                    <Link to="/MicroMachining" onClick={handleLinkClick}>
+                    <Link to="/CounsellingForm" onClick={handleLinkClick}>
                       BBA NORMAL
                     </Link>
                     <br />
-                    <Link to="/MicroMachining" onClick={handleLinkClick}>
+                    <Link to="/CounsellingForm" onClick={handleLinkClick}>
                       BBA IN SPECIALIZATION
                     </Link>
                   </div>
@@ -719,19 +747,19 @@ const Navbar = () => {
                 </button>
                 {isNursingSubDropdownOpen && (
                   <div className="pl-4">
-                    <Link to="/EngineeringPlastics" onClick={handleLinkClick}>
+                    <Link to="//CounsellingForm" onClick={handleLinkClick}>
                       GNM
                     </Link>
                     <br />
-                    <Link to="/metalpart" onClick={handleLinkClick}>
+                    <Link to="/CounsellingForm" onClick={handleLinkClick}>
                       B.SC NURSING
                     </Link>
                     <br />
-                    <Link to="/MicroMachining" onClick={handleLinkClick}>
+                    <Link to="/CounsellingForm" onClick={handleLinkClick}>
                       M.SC NURSING
                     </Link>
                     <br />
-                    <Link to="/MicroMachining" onClick={handleLinkClick}>
+                    <Link to="/CounsellingForm" onClick={handleLinkClick}>
                       ANM
                     </Link>
                   </div>
@@ -746,15 +774,15 @@ const Navbar = () => {
                 </button>
                 {isPharmacySubDropdownOpen && (
                   <div className="pl-4">
-                    <Link to="/EngineeringPlastics" onClick={handleLinkClick}>
+                    <Link to="//CounsellingForm" onClick={handleLinkClick}>
                       D pharma
                     </Link>
                     <br />
-                    <Link to="/metalpart" onClick={handleLinkClick}>
+                    <Link to="/CounsellingForm" onClick={handleLinkClick}>
                       B pharma
                     </Link>
                     <br />
-                    <Link to="/MicroMachining" onClick={handleLinkClick}>
+                    <Link to="/CounsellingForm" onClick={handleLinkClick}>
                       M pharma
                     </Link>
                   </div>
@@ -773,17 +801,17 @@ const Navbar = () => {
                 {isMiscellaneousSubDropdownOpen && (
                   <div className="pl-4">
                     <Link
-                      to="/EngineeringPlasticsTrading"
+                      to="/CounsellingForm"
                       onClick={handleLinkClick}
                     >
                       B.ED
                     </Link>
                     <br />
-                    <Link to="/fabrication" onClick={handleLinkClick}>
+                    <Link to="/CounsellingForm" onClick={handleLinkClick}>
                       M.ED
                     </Link>
                     <br />
-                    <Link to="/ReverseEngineering" onClick={handleLinkClick}>
+                    <Link to="/CounsellingForm" onClick={handleLinkClick}>
                       D.LED
                     </Link>
                   </div>
@@ -793,15 +821,15 @@ const Navbar = () => {
                   Agriculture
                 </Link>
                 <br />
-                <Link to="/SpecialPurposeMachines" onClick={handleLinkClick}>
+                <Link to="/CounsellingForm" onClick={handleLinkClick}>
                   LAW
                 </Link>
                 <br />
-                <Link to="/SpecialPurposeMachines" onClick={handleLinkClick}>
+                <Link to="/CounsellingForm" onClick={handleLinkClick}>
                   Paramedical
                 </Link>
                 <br />
-                <Link to="/SpecialPurposeMachines" onClick={handleLinkClick}>
+                <Link to="/CounsellingForm" onClick={handleLinkClick}>
                   Mass Communication
                 </Link>
               </div>
@@ -810,34 +838,60 @@ const Navbar = () => {
 
           <div>
             <button
-              onClick={() => setIsserviceDropdownOpen(!isservicveDropdownOpen)}
+              onClick={() => setIsServiceDropdownOpen(!isServiceDropdownOpen)}
               className="flex items-center justify-between w-full"
             >
               Service <MdKeyboardArrowDown />
             </button>
-            {isservicveDropdownOpen && (
+            {isServiceDropdownOpen && (
               <div className="pl-4">
-                <button className="flex items-center justify-between w-full">
+                <button
+                  onClick={handleNavigation}
+                  className="flex items-center justify-between w-full"
+                >
                   Career Counseling
                 </button>
 
-                <button className="flex items-center justify-between w-full">
+                <button
+                  onClick={handleNavigation}
+                  className="flex items-center justify-between w-full"
+                >
                   Career Advisor
                 </button>
-                <button className="flex items-center justify-between w-full">
+
+                <button
+                  onClick={handleNavigation}
+                  className="flex items-center justify-between w-full"
+                >
                   Admission Guidance
                 </button>
-                <button className="flex items-center justify-between w-full">
+
+                <button
+                  onClick={handleNavigation}
+                  className="flex items-center justify-between w-full"
+                >
                   Education Loan Assistance
                 </button>
-                <button className="flex items-center justify-between w-full">
+
+                <button
+                  onClick={handleNavigation}
+                  className="flex items-center justify-between w-full"
+                >
                   Scholarship
                 </button>
-                <button className="flex items-center justify-between w-full">
+
+                <button
+                  onClick={handleNavigation}
+                  className="flex items-center justify-between w-full"
+                >
                   Placement Assistance
                 </button>
-                <button className="flex items-center justify-between w-full">
-                  Loan Guardian Service
+
+                <button
+                  onClick={handleNavigation}
+                  className="flex items-center justify-between w-full"
+                >
+                  Local Guardian Service
                 </button>
               </div>
             )}
