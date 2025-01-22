@@ -1,9 +1,10 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import data from "./IndianCollageData"; // Import the data file
 
 function AllCollage() {
   const location = useLocation();
+  const navigate = useNavigate();
   const path = location.pathname.split("/")[1]; // Extract the category from the URL
 
   // Find the matching category data
@@ -16,7 +17,9 @@ function AllCollage() {
       filteredData.lawCollages ||
       []
     : [];
-  console.log(colleges);
+  const handleCounselingClick = () => {
+    navigate("/CounsellingForm"); // Navigate to the counseling form with the college ID
+  };
 
   return (
     <>
@@ -54,11 +57,11 @@ function AllCollage() {
                     </h3>
                     {/* Action Buttons */}
                     <div className="flex justify-center space-x-4">
-                      <button className="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600">
+                      <button
+                        className="px-4 py-2 w-full bg-green-500 text-white rounded hover:bg-green-600"
+                        onClick={() => handleCounselingClick()}
+                      >
                         Need Counselling
-                      </button>
-                      <button className="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600">
-                        View More Details
                       </button>
                     </div>
                   </div>
