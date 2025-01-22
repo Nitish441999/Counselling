@@ -38,13 +38,11 @@ function Law() {
                 <div className="flex justify-center space-x-4">
                   <button
                     onClick={handleCounsellingClick} // Click handler
-                    className="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600"
+                    className="px-4 py-2 w-full bg-green-500 text-white rounded hover:bg-green-600"
                   >
                     Need Counselling
                   </button>
-                  <button className="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600">
-                    View More Details
-                  </button>
+                  
                 </div>
               </div>
             </div>

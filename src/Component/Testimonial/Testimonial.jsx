@@ -155,9 +155,9 @@ function Testimonial() {
               {/* Name Overlay */}
               <div className=" w-full bg-gradient-to-t text-gray-600 text-center py-2">
                 <h3 className="text-lg font-semibold">{testimonial.name}</h3>
-                <div className="mt-2 flex justify-center">
+                <div className=" flex justify-center">
                   {[...Array(Number(testimonial.rating))].map((_, index) => (
-                    <span key={index} className="text-yellow-400">
+                    <span key={index} className="text-yellow-400 text-2xl">
                       ★
                     </span>
                   ))}

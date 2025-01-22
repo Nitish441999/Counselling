@@ -34,8 +34,8 @@ const CounsellingForm = () => {
   };
 
   return (
-    <div className="bg-gray-100 p-6 min-h-screen flex items-center justify-center">
-      <div className="max-w-7xl w-full bg-white p-8 rounded-lg shadow-md">
+    <div className="bg-gray-100 p-6 max-md:px-0   min-h-screen flex items-center justify-center">
+      <div className="max-w-[90.5%] w-full bg-white p-8 rounded-lg shadow-md">
         <h2 className="text-2xl font-bold mb-6 text-center">
           Need counseling form
         </h2>
@@ -177,10 +177,10 @@ const CounsellingForm = () => {
               required
             ></textarea>
           </div>
-          <div className="md:col-span-2">
+          <div className="md:col-span-2 flex justify-center">
             <button
               type="submit"
-              className="w-full bg-blue-500 text-white p-2 rounded-lg hover:bg-blue-600"
+              className="w-64 bg-blue-500 text-white p-3 rounded-lg hover:bg-blue-600"
             >
               Submit
             </button>
