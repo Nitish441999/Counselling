@@ -36,9 +36,9 @@ function Btech() {
   };
 
   return (
-    <div className="p-6 flex justify-center">
+    <div className="p-6 max-md:p-0 flex justify-center">
       <div className="max-w-[90.33%] w-full">
-        <h2 className="text-2xl font-bold mb-6 text-center">
+        <h2 className="text-4xl font-bold text-gray-700 text-center mb-6 tracking-wider uppercase">
           Top Btech Colleges
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">

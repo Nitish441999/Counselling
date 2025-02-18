@@ -110,11 +110,11 @@ function Category() {
   };
 
   return (
-    <div className="slider-container p-6">
-      <h2 className="text-2xl font-bold mb-4 text-center">COLLEGES</h2>
+    <div className="slider-container p-6 max-md:p-3">
+      <h2 className="text-4xl font-bold text-gray-700 text-center mb-6 tracking-wider uppercase">COLLAGES</h2>
       <Slider {...settings} className=" overflow-hidden max-md:overflow-hidden">
         {categories.map((category) => (
-          <div key={category.id} className="p-4">
+          <div key={category.id} className="p-4 max-md:p-2">
             <div className="relative bg-white shadow-md rounded-lg overflow-hidden cursor-pointer">
               {/* Image Section */}
               <img

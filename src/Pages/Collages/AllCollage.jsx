@@ -23,17 +23,30 @@ function AllCollage() {
 
   return (
     <>
-      {colleges?.map((college) => {
+      <div className="relative w-full h-[80vh]">
+        <img
+          src="https://careercounsellingcentre.com/wp-content/uploads/2024/04/Alliance-University.png"
+          className="w-full h-full object-cover"
+          alt="Alliance University"
+        />
+        <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-50">
+          <h3 className="text-white text-2xl md:text-2xl font-bold uppercase tracking-wide">
+            Home | Colleges
+          </h3>
+        </div>
+      </div>
+
+      {/* {colleges?.map((college) => {
         <div key={college.id} className=" w-full h-96">
           <video className=" w-full h-full " loop autoPlay controls>
             <source src={college.video} />
           </video>
         </div>;
-      })}
+      })} */}
 
       <div className="min-lg:p-6 flex justify-center">
         <div className="max-w-[90.33%] w-full mt-5">
-          <h2 className="text-2xl font-bold mb-6 text-center">
+          <h2 className="text-3xl font-bold text-gray-700 text-center mb-6 tracking-wider uppercase">
             Top {path.toUpperCase()} Colleges
           </h2>
           {colleges.length > 0 ? (

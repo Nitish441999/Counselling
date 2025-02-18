@@ -34,10 +34,10 @@ const CounsellingForm = () => {
   };
 
   return (
-    <div className="bg-gray-100 p-6 max-md:px-0   min-h-screen flex items-center justify-center">
-      <div className="max-w-[90.5%] w-full bg-white p-8 rounded-lg shadow-md">
-        <h2 className="text-2xl font-bold mb-6 text-center">
-          Need counseling form
+    <div className=" p-6 max-md:px-0   min-h-screen flex items-center justify-center">
+      <div className="max-w-[90.5%] w-full bg-gray-50 p-8 rounded-lg shadow-md">
+        <h2 className="text-4xl font-bold text-gray-700 text-center mb-6 tracking-wider uppercase">
+          counseling form
         </h2>
         <form
           onSubmit={handleSubmit}
