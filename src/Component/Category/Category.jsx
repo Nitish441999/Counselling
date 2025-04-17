@@ -111,7 +111,10 @@ function Category() {
 
   return (
     <div className="slider-container p-6 max-md:p-3">
-      <h2 className="text-4xl font-bold text-gray-700 text-center mb-6 tracking-wider uppercase">COLLAGES</h2>
+      <h2 className="text-2xl sm:text-3xl md:text-3xl lg:text-4xl font-bold text-gray-700 text-center mb-6 tracking-wider uppercase">
+        COLLAGES
+      </h2>
+
       <Slider {...settings} className=" overflow-hidden max-md:overflow-hidden">
         {categories.map((category) => (
           <div key={category.id} className="p-4 max-md:p-2">

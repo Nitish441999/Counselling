@@ -68,7 +68,7 @@ const Navbar = () => {
               className="flex items-center py-5 text-white"
               onClick={handleLinkClick}
             >
-              <span className="font-bold uppercase text-[20px] max-md:text-[15px]">
+              <span className="font-bold uppercase text-[20px] hidden md:inline-block">
                 Student Counselling Corner
               </span>
             </Link>
@@ -800,10 +800,7 @@ const Navbar = () => {
                 </button>
                 {isMiscellaneousSubDropdownOpen && (
                   <div className="pl-4">
-                    <Link
-                      to="/CounsellingForm"
-                      onClick={handleLinkClick}
-                    >
+                    <Link to="/CounsellingForm" onClick={handleLinkClick}>
                       B.ED
                     </Link>
                     <br />

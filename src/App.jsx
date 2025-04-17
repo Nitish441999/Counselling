@@ -9,6 +9,7 @@ import Navbar from "./Pages/Navbar/Navbar";
 import Footer from "./Pages/Footer/Footer";
 import Loading from "./Component/Loading/Laoding";
 
+
 // Lazy load your pages
 const Home = React.lazy(() => import("./Pages/Home/Home"));
 const Contact = React.lazy(() => import("./Pages/Contact/Contact"));

@@ -3,24 +3,10 @@ import React, { useState } from "react";
 const CounsellingForm = () => {
   const [formData, setFormData] = useState({
     name: "",
-    dob: "",
     phone: "",
     email: "",
-    aadhar: "",
-    pan: "",
-    marks10: "",
-    year10: "",
-    stream12: "",
-    marks12: "",
     courses: "",
-    exam: "",
-    regNumber: "",
-    rank: "",
-    fatherName: "",
-    fatherNumber: "",
-    address: "",
-    motherName: "",
-    motherNumber: "",
+    message: "",
   });
 
   const handleChange = (e) => {
@@ -34,10 +20,10 @@ const CounsellingForm = () => {
   };
 
   return (
-    <div className=" p-6 max-md:px-0   min-h-screen flex items-center justify-center">
-      <div className="max-w-[90.5%] w-full bg-gray-50 p-8 rounded-lg shadow-md">
-        <h2 className="text-4xl font-bold text-gray-700 text-center mb-6 tracking-wider uppercase">
-          counseling form
+    <div className=" p-6 min-h-screen flex items-center justify-center">
+      <div className="max-w-7xl w-full bg-gray-50 p-8 rounded-lg shadow-md">
+        <h2 className="text-2xl sm:text-3xl md:text-3xl lg:text-4xl font-bold text-gray-700 text-center mb-6 tracking-wider uppercase">
+          Counselling Form
         </h2>
         <form
           onSubmit={handleSubmit}
@@ -50,12 +36,11 @@ const CounsellingForm = () => {
               type: "text",
               placeholder: "Enter your name",
             },
-            { id: "dob", label: "Date of Birth", type: "date" },
             {
               id: "phone",
-              label: "Phone Number",
+              label: "Mobile Number",
               type: "tel",
-              placeholder: "Enter your phone number",
+              placeholder: "Enter your mobile number",
             },
             {
               id: "email",
@@ -64,88 +49,10 @@ const CounsellingForm = () => {
               placeholder: "Enter your email",
             },
             {
-              id: "aadhar",
-              label: "Aadhar Card Number",
-              type: "text",
-              placeholder: "Enter Aadhar card number",
-            },
-            {
-              id: "pan",
-              label: "PAN Card Number",
-              type: "text",
-              placeholder: "Enter PAN card number",
-            },
-            {
-              id: "marks10",
-              label: "Class 10th Marks",
-              type: "number",
-              placeholder: "Enter Class 10th marks",
-            },
-            {
-              id: "year10",
-              label: "Class 10th Passing Year",
-              type: "number",
-              placeholder: "Enter passing year",
-            },
-            {
-              id: "stream12",
-              label: "Class 12th Stream",
-              type: "text",
-              placeholder: "Enter Class 12th stream",
-            },
-            {
-              id: "marks12",
-              label: "Class 12th Marks",
-              type: "number",
-              placeholder: "Enter Class 12th marks",
-            },
-            {
               id: "courses",
-              label: "Required Courses Name",
+              label: "Interested Course",
               type: "text",
-              placeholder: "Enter course names",
-            },
-            {
-              id: "exam",
-              label: "Entrance Exam Name",
-              type: "text",
-              placeholder: "Enter exam name",
-            },
-            {
-              id: "regNumber",
-              label: "Entrance Exam Registration Number",
-              type: "text",
-              placeholder: "Enter registration number",
-            },
-            {
-              id: "rank",
-              label: "Entrance Exam Ranks",
-              type: "number",
-              placeholder: "Enter rank",
-            },
-            {
-              id: "fatherName",
-              label: "Father's Name",
-              type: "text",
-              placeholder: "Enter father's name",
-            },
-            {
-              id: "fatherNumber",
-              label: "Father's Number",
-              type: "tel",
-              placeholder: "Enter father's phone number",
-            },
-            {
-              id: "motherName",
-              label: "Mother's Name",
-              type: "text",
-              placeholder: "Enter mother's name",
-            },
-            {
-              id: "motherNumber",
-              label: "Mother's Number",
-              type: "tel",
-              placeholder: "Enter mother's phone number",
+              placeholder: "Enter course name",
             },
           ].map(({ id, label, type, placeholder }) => (
             <div key={id}>
@@ -163,24 +70,26 @@ const CounsellingForm = () => {
               />
             </div>
           ))}
+
           <div className="md:col-span-2">
-            <label htmlFor="address" className="block font-medium mb-2">
-              Address
+            <label htmlFor="message" className="block font-medium mb-2">
+              Message
             </label>
             <textarea
-              id="address"
+              id="message"
               className="w-full p-2 border border-gray-300 rounded-lg"
-              placeholder="Enter address"
-              rows="3"
-              value={formData.address}
+              placeholder="Write your message"
+              rows="4"
+              value={formData.message}
               onChange={handleChange}
               required
             ></textarea>
           </div>
+
           <div className="md:col-span-2 flex justify-center">
             <button
               type="submit"
-              className="w-64 bg-blue-500 text-white p-3 rounded-lg hover:bg-blue-600"
+              className="w-64 bg-blue-500 text-white p-2 rounded-lg hover:bg-blue-600"
             >
               Submit
             </button>

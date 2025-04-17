@@ -57,9 +57,10 @@ const Gallery = () => {
   return (
     <div className="p-4 max-md:p-0 flex justify-center">
       <div className="max-w-[90.33%] w-full">
-        <h2 className="text-4xl font-bold text-gray-700 text-center mb-6 tracking-wider uppercase">
+        <h2 className="text-2xl sm:text-3xl md:text-3xl lg:text-4xl font-bold text-gray-700 text-center mb-6 tracking-wider uppercase">
           Gallery
         </h2>
+
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {images.map((image) => (
             <div

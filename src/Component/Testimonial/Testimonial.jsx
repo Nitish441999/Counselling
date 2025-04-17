@@ -139,7 +139,7 @@ function Testimonial() {
 
   return (
     <div className="slider-container">
-      <h2 className="text-4xl font-bold text-gray-700 text-center mb-6 tracking-wider uppercase">
+      <h2 className="text-2xl sm:text-3xl md:text-3xl lg:text-4xl font-bold text-gray-700 text-center mb-6 tracking-wider uppercase">
         Testimonial
       </h2>
       <Slider {...settings} className="overflow-hidden max-md:overflow-hidden">
